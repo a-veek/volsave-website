@@ -116,7 +116,8 @@
       { "label": "Copiar volúmenes y discos completos", "free": "yes", "pro": "yes", "proNote": "con licencia" },
       { "label": "Verificar y restaurar imágenes", "free": "yes", "pro": "yes", "proNote": "también sin licencia" },
       { "label": "Interfaz gráfica", "free": "no", "pro": "yes" },
-      { "label": "Línea de comandos para scripts", "free": "yes", "pro": "yes", "proNote": "volsave-pro-cli" },
+      { "label": "Línea de comandos para scripts", "free": "yes", "pro": "yes", "proNote": "en el mismo archivo EXE" },
+      { "label": "Un solo archivo EXE, sin instalación", "free": "yes", "freeNote": "volsave.exe", "pro": "yes", "proNote": "volsave-pro.exe: interfaz y línea de comandos" },
       { "label": "Windows 10/11 y Windows PE", "free": "yes", "pro": "yes", "proNote": "funciona sin controlador gráfico" },
       { "label": "Imágenes diferenciales", "free": "yes", "pro": "planned", "proNote": "en la interfaz" },
       { "label": "Imágenes cifradas", "free": "no", "pro": "planned" },
@@ -136,7 +137,7 @@
         { "title": "Elegir en vez de escribir", "text": "Discos y particiones de un vistazo. Elige un disco completo o un volumen y cópialo." },
         { "title": "Restaurar con verificación", "text": "Restaura imágenes de disco y de volumen y comprueba el resultado, también sin licencia." },
         { "title": "Funciona en todas partes", "text": "Windows 10/11 y Windows PE. El renderizador por software no necesita controlador gráfico." },
-        { "title": "Línea de comandos incluida", "text": "volsave-pro-cli.exe ofrece los mismos comandos que el volsave libre, para cmd, PowerShell, scripts y el Programador de tareas." }
+        { "title": "Un archivo para ambos", "text": "Con doble clic, volsave-pro.exe abre la interfaz. Llamado con argumentos, el mismo archivo funciona como línea de comandos, con los mismos comandos que el volsave libre, para cmd, PowerShell, scripts y el Programador de tareas." }
       ]
     },
     "license": {

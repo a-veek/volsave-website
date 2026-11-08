@@ -116,7 +116,8 @@
       { "label": "Back up volumes and whole disks", "free": "yes", "pro": "yes", "proNote": "with license" },
       { "label": "Verify and restore images", "free": "yes", "pro": "yes", "proNote": "also without license" },
       { "label": "Graphical interface", "free": "no", "pro": "yes" },
-      { "label": "Command line for scripts", "free": "yes", "pro": "yes", "proNote": "volsave-pro-cli" },
+      { "label": "Command line for scripts", "free": "yes", "pro": "yes", "proNote": "in the same EXE file" },
+      { "label": "One EXE file, no installation", "free": "yes", "freeNote": "volsave.exe", "pro": "yes", "proNote": "volsave-pro.exe: interface and command line" },
       { "label": "Windows 10/11 and Windows PE", "free": "yes", "pro": "yes", "proNote": "runs without a graphics driver" },
       { "label": "Differential images", "free": "yes", "pro": "planned", "proNote": "in the interface" },
       { "label": "Encrypted images", "free": "no", "pro": "planned" },
@@ -136,7 +137,7 @@
         { "title": "Pick instead of type", "text": "Disks and partitions at a glance. Choose a whole disk or a single volume and back it up." },
         { "title": "Restore with verification", "text": "Restore disk and volume images and check the result – also without a license." },
         { "title": "Runs everywhere", "text": "Windows 10/11 and Windows PE. The software renderer needs no graphics driver." },
-        { "title": "Command line included", "text": "volsave-pro-cli.exe offers the same commands as the free volsave, for cmd, PowerShell, scripts and Task Scheduler." }
+        { "title": "One file for both", "text": "Double-click volsave-pro.exe and the interface opens. Called with arguments, the same file works as a command line – with the same commands as the free volsave, for cmd, PowerShell, scripts and Task Scheduler." }
       ]
     },
     "license": {
