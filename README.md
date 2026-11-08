@@ -29,15 +29,6 @@ on the same page.
 Adding a language: add its code to `languages`, `languageNames` and
 `locales` in `site.json` and copy `src/_data/i18n/en.json` to the new code.
 
-## Design
-
-Follows the Apple Human Interface Guidelines as summarized in
-[dickwu/apple-design-skill](https://github.com/dickwu/apple-design-skill):
-system fonts, 17px body text, contrast of at least 4.5:1, 44px hit targets,
-light/dark/increased-contrast modes, translucency only on the navigation bar,
-and no motion with `prefers-reduced-motion`. No external fonts, scripts,
-cookies or tracking.
-
 ## Before going live
 
 - Fill in the placeholders in `legal` and `privacy` (name, address, hosting
