@@ -1,0 +1,40 @@
+{%- set c = t.compare -%}
+{%- macro cell(value, note) -%}
+  {%- if value == "yes" -%}
+    <span class="mark mark--yes"><span aria-hidden="true">✓</span> {{ t.ui.yes }}</span>
+  {%- elif value == "no" -%}
+    <span class="mark mark--no"><span aria-hidden="true">–</span> {{ t.ui.no }}</span>
+  {%- elif value == "planned" -%}
+    <span class="mark mark--planned">{{ t.ui.planned }}</span>
+  {%- else -%}
+    <span class="mark">{{ value }}</span>
+  {%- endif -%}
+  {%- if note %}<small>{{ note }}</small>{% endif -%}
+{%- endmacro -%}
+<div class="compare" role="region" aria-labelledby="compare-caption" tabindex="0">
+  <table>
+    <caption id="compare-caption" class="visually-hidden">{{ c.caption }}</caption>
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden">{{ c.featureCol }}</span></th>
+        <th scope="col">
+          <span class="compare__name">VolSave</span>
+          <span class="compare__sub">{{ c.freeSub }}</span>
+        </th>
+        <th scope="col">
+          <span class="compare__name">VolSave Pro</span>
+          <span class="compare__sub">{{ c.proSub }}</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {%- for r in c.rows %}
+      <tr>
+        <th scope="row">{{ r.label }}</th>
+        <td>{{ cell(r.free, r.freeNote) }}</td>
+        <td>{{ cell(r.pro, r.proNote) }}</td>
+      </tr>
+      {%- endfor %}
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,19 @@
+{#- Renders a legal text: doc = { title, intro?, notice?, sections: [{ heading, paragraphs: [...] }] }.
+    Paragraphs may contain HTML (links, line breaks); they come only from our own i18n files. -#}
+<section class="section section--prose">
+  <div class="container narrow prose">
+    <h1>{{ doc.title }}</h1>
+    {%- if doc.notice %}
+    <p class="note note--warn">{{ doc.notice | safe }}</p>
+    {%- endif %}
+    {%- if doc.intro %}
+    <p>{{ doc.intro | safe }}</p>
+    {%- endif %}
+    {%- for s in doc.sections %}
+    <h2>{{ s.heading }}</h2>
+    {%- for para in s.paragraphs %}
+    <p>{{ para | replace("{email}", '<a href="mailto:' + site.contactEmail + '">' + site.contactEmail + '</a>') | safe }}</p>
+    {%- endfor %}
+    {%- endfor %}
+  </div>
+</section>

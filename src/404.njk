@@ -1,0 +1,30 @@
+---
+permalink: /404.html
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<html lang="{{ site.defaultLang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>404 – {{ site.name }}</title>
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+  <main id="main" class="section">
+    <div class="container narrow center">
+      <p class="eyebrow">404</p>
+      {%- for l in site.languages %}
+      {%- set e = i18n[l].ui.notFound %}
+      <section lang="{{ l }}" class="notfound">
+        <h1 class="h2">{{ e.title }}</h1>
+        <p><a class="button button--link" href="/{{ l }}/">{{ e.link }} <span aria-hidden="true">›</span></a></p>
+      </section>
+      {%- endfor %}
+    </div>
+  </main>
+</body>
+</html>

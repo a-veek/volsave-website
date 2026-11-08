@@ -1,0 +1,37 @@
+---
+permalink: /index.html
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<html lang="{{ site.defaultLang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site.name }}</title>
+  <meta name="color-scheme" content="light dark">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="{{ site.url }}/{{ site.defaultLang }}/">
+  {%- for l in site.languages %}
+  <link rel="alternate" hreflang="{{ l }}" href="{{ site.url }}/{{ l }}/">
+  {%- endfor %}
+  <link rel="alternate" hreflang="x-default" href="{{ site.url }}/{{ site.defaultLang }}/">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <script>
+    // Send visitors to their browser language; German otherwise.
+    (function () {
+      var supported = {{ site.languages | dump | safe }};
+      var prefs = navigator.languages || [navigator.language || ""];
+      for (var i = 0; i < prefs.length; i++) {
+        var code = String(prefs[i]).slice(0, 2).toLowerCase();
+        if (supported.indexOf(code) !== -1) { location.replace("/" + code + "/"); return; }
+      }
+      location.replace("/{{ site.defaultLang }}/");
+    })();
+  </script>
+  <noscript><meta http-equiv="refresh" content="0; url=/{{ site.defaultLang }}/"></noscript>
+  <style>body{font:17px/1.5 system-ui,sans-serif;margin:3rem auto;max-width:30rem;padding:0 1rem}</style>
+</head>
+<body>
+  <p>{% for l in site.languages %}<a href="/{{ l }}/" hreflang="{{ l }}">{{ site.languageNames[l] }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</p>
+</body>
+</html>

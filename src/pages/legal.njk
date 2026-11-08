@@ -1,0 +1,12 @@
+---
+pagination:
+  data: site.languages
+  size: 1
+  alias: lang
+pageKey: legal
+permalink: "/{{ lang }}/legal/"
+layout: layouts/base.njk
+---
+{%- set t = i18n[lang] -%}
+{% set doc = t.legal %}
+{% include "partials/prose.njk" %}

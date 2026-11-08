@@ -1,0 +1,12 @@
+---
+pagination:
+  data: site.languages
+  size: 1
+  alias: lang
+pageKey: privacy
+permalink: "/{{ lang }}/privacy/"
+layout: layouts/base.njk
+---
+{%- set t = i18n[lang] -%}
+{% set doc = t.privacy %}
+{% include "partials/prose.njk" %}

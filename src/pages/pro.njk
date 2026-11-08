@@ -1,0 +1,89 @@
+---
+pagination:
+  data: site.languages
+  size: 1
+  alias: lang
+pageKey: pro
+permalink: "/{{ lang }}/pro/"
+layout: layouts/base.njk
+---
+{%- set t = i18n[lang] -%}
+{%- set pr = t.pro -%}
+
+<section class="hero hero--compact">
+  <div class="container hero__inner">
+    <p class="eyebrow">{{ pr.eyebrow }}</p>
+    <h1 class="display">{{ pr.title }}</h1>
+    <p class="lead">{{ pr.lead }}</p>
+    <div class="actions">
+      <a class="button button--primary" href="#buy">{{ pr.ctaBuy }}</a>
+      <a class="button button--link" href="/{{ lang }}/">{{ pr.ctaFree }} <span aria-hidden="true">›</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" aria-labelledby="now-title">
+  <div class="container">
+    <header class="section__head">
+      <h2 id="now-title">{{ pr.now.title }}</h2>
+    </header>
+    <ul class="grid grid--2 features">
+      {%- for f in pr.now.items %}
+      <li class="card">
+        <h3>{{ f.title }}</h3>
+        <p>{{ f.text }}</p>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="license-title">
+  <div class="container split split--top">
+    <div class="split__text">
+      <p class="eyebrow">{{ pr.license.eyebrow }}</p>
+      <h2 id="license-title">{{ pr.license.title }}</h2>
+      <p>{{ pr.license.text }}</p>
+    </div>
+    <dl class="facts">
+      {%- for f in pr.license.facts %}
+      <div>
+        <dt>{{ f.term }}</dt>
+        <dd>{{ f.desc }}</dd>
+      </div>
+      {%- endfor %}
+    </dl>
+  </div>
+</section>
+
+<section class="section section--alt" aria-labelledby="planned-title">
+  <div class="container narrow">
+    <h2 id="planned-title">{{ pr.planned.title }}</h2>
+    <p class="section__lead">{{ pr.planned.lead }}</p>
+    <ul class="pills">
+      {%- for item in pr.planned.items %}
+      <li>{{ item }}</li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="compare-title">
+  <div class="container">
+    <header class="section__head">
+      <h2 id="compare-title">{{ t.home.compare.title }}</h2>
+    </header>
+    {% include "partials/compare.njk" %}
+  </div>
+</section>
+
+<section class="section section--cta" id="buy" aria-labelledby="buy-title">
+  <div class="container narrow center">
+    <h2 id="buy-title">{{ pr.buy.title }}</h2>
+    <p class="section__lead">{{ pr.buy.text }}</p>
+    <div class="actions actions--center">
+      <a class="button button--primary" href="mailto:{{ site.contactEmail }}?subject=VolSave%20Pro">{{ pr.buy.cta }}</a>
+    </div>
+    <p class="fine">{{ pr.buy.fine }}</p>
+  </div>
+</section>

@@ -1,0 +1,36 @@
+---
+pagination:
+  data: site.languages
+  size: 1
+  alias: lang
+pageKey: faq
+permalink: "/{{ lang }}/faq/"
+layout: layouts/base.njk
+---
+{%- set t = i18n[lang] -%}
+{%- set f = t.faq -%}
+
+<section class="hero hero--compact">
+  <div class="container hero__inner">
+    <h1 class="display">{{ f.title }}</h1>
+    <p class="lead">{{ f.lead }}</p>
+  </div>
+</section>
+
+<section class="section section--flush" aria-label="{{ f.title }}">
+  <div class="container narrow">
+    <div class="faq">
+      {%- for q in f.items %}
+      <details>
+        <summary><h2>{{ q.q }}</h2></summary>
+        <div class="faq__answer">
+          {%- for para in q.a %}
+          <p>{{ para }}</p>
+          {%- endfor %}
+        </div>
+      </details>
+      {%- endfor %}
+    </div>
+    <p class="note">{{ f.more }} <a href="mailto:{{ site.contactEmail }}">{{ site.contactEmail }}</a></p>
+  </div>
+</section>

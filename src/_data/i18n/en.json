@@ -1,0 +1,282 @@
+{
+  "ui": {
+    "skipToContent": "Skip to content",
+    "home": "Home",
+    "mainNav": "Main navigation",
+    "footerNav": "Footer",
+    "language": "Language",
+    "sourceCode": "Source code",
+    "footerTagline": "Disk and volume imaging for Windows. Written in Rust.",
+    "footerFine": "Windows and BitLocker are trademarks of Microsoft Corporation.",
+    "yes": "Yes",
+    "no": "No",
+    "planned": "Planned",
+    "notFound": { "title": "This page does not exist.", "link": "Go to the home page" }
+  },
+  "pages": {
+    "home": {
+      "navLabel": "VolSave",
+      "metaTitle": "VolSave – Disk and volume imaging for Windows",
+      "metaDescription": "VolSave backs up whole disks and single volumes on Windows 10/11 and Windows PE: consistent through VSS, compressed with zstd, free and open source."
+    },
+    "pro": {
+      "navLabel": "Pro",
+      "metaTitle": "VolSave Pro – the graphical interface for VolSave",
+      "metaDescription": "VolSave Pro: back up and restore with a graphical interface, also in Windows PE. Perpetual license per person or company, checked offline."
+    },
+    "faq": {
+      "navLabel": "FAQ",
+      "metaTitle": "Frequently asked questions – VolSave",
+      "metaDescription": "Answers about VolSave: VSS, Windows PE, BitLocker, differential images, cloning to another disk and licenses."
+    },
+    "legal": {
+      "navLabel": "Legal notice",
+      "metaTitle": "Legal notice – VolSave",
+      "metaDescription": "Legal notice (Impressum) of volumesave.de."
+    },
+    "privacy": {
+      "navLabel": "Privacy",
+      "metaTitle": "Privacy policy – VolSave",
+      "metaDescription": "Privacy policy of volumesave.de."
+    }
+  },
+  "home": {
+    "eyebrow": "Disk imaging for Windows",
+    "title": "Back up entire disks. Restore them exactly.",
+    "lead": "VolSave images Windows disks and volumes while Windows runs, verifies every image and restores it sector by sector – until Windows boots again.",
+    "ctaDownload": "Download VolSave",
+    "ctaPro": "Discover VolSave Pro",
+    "ctaFine": "Free and open source (GPL-3.0). Windows 10/11 and Windows PE, no installation.",
+    "diskmap": {
+      "disk": "Disk",
+      "image": "Image",
+      "used": "Used blocks",
+      "free": "Free space, skipped",
+      "compressed": "Image, compressed with zstd",
+      "caption": "VolSave reads only the used blocks of a volume and compresses them, so the image is much smaller than the disk."
+    },
+    "features": {
+      "title": "Everything an image needs.",
+      "lead": "No agent, no service, no cloud. One EXE file that backs up, verifies and restores.",
+      "items": [
+        { "title": "While Windows runs", "text": "Backups go through the Volume Shadow Copy Service (VSS). Windows keeps running and the image stays consistent." },
+        { "title": "The whole disk", "text": "Partition table, boot code and every partition in one image – for BIOS/MBR and UEFI/GPT." },
+        { "title": "Only used blocks", "text": "Free space is skipped and the rest is compressed with zstd. What Windows excludes through FilesNotToBackup stays out." },
+        { "title": "Differential images", "text": "After a full backup, store only the changes. No long chains: each differential image needs only its full backup." },
+        { "title": "Verify, don't hope", "text": "verify checks an image at any time. restore --verify reads the target back after restoring and compares it." },
+        { "title": "Runs in Windows PE", "text": "Works without installation in Windows PE. There VolSave reads volumes directly, since the installed Windows is not running." }
+      ]
+    },
+    "cli": {
+      "eyebrow": "Command line",
+      "title": "Made for scripts.",
+      "text": "Every command runs from cmd, PowerShell or Task Scheduler. VolSave writes a log next to each image and reports the result through a clear exit code.",
+      "points": [
+        "Exit codes: 0 = OK, 1 = error, 2 = OK with warnings",
+        "A log next to the image, with every VSS call on request",
+        "Existing images are only replaced with --overwrite",
+        "Restore a single partition from a disk image"
+      ],
+      "terminalTitle": "Command Prompt (Administrator)",
+      "terminalLabel": "Example commands: list disks, back up disk 0, create a differential image, verify the image and restore it to disk 1.",
+      "cmd": {
+        "list": "Show disks and volumes",
+        "backup": "Back up the whole disk 0",
+        "diff": "Only what changed since the full backup",
+        "verify": "Verify the image",
+        "restore": "Clone onto disk 1 and read it back"
+      }
+    },
+    "compare": {
+      "title": "Free or Pro.",
+      "lead": "The command line is free and stays free. VolSave Pro adds a graphical interface for everyone who prefers to click."
+    },
+    "tested": {
+      "title": "Tested on real hardware.",
+      "items": [
+        { "value": "Windows 10 and 11", "label": "Whole disks cloned and booted" },
+        { "value": "BIOS/MBR and UEFI/GPT", "label": "Both boot modes restored" },
+        { "value": "VMs and hardware", "label": "Also from Windows PE, back onto the same NVMe SSD" }
+      ],
+      "statusLabel": "Status:",
+      "status": "VolSave is in early development, but in use. Check your images with verify before you rely on them."
+    },
+    "cta": {
+      "title": "Ready for your first image?",
+      "text": "One EXE file, no installation. Run it as administrator and type volsave --help.",
+      "faq": "Frequently asked questions"
+    }
+  },
+  "compare": {
+    "caption": "Comparison of VolSave and VolSave Pro",
+    "featureCol": "Feature",
+    "freeSub": "Command line · GPL-3.0",
+    "proSub": "Graphical interface · License",
+    "rows": [
+      { "label": "Back up volumes and whole disks", "free": "yes", "pro": "yes", "proNote": "with license" },
+      { "label": "Verify and restore images", "free": "yes", "pro": "yes", "proNote": "also without license" },
+      { "label": "Graphical interface", "free": "no", "pro": "yes" },
+      { "label": "Command line for scripts", "free": "yes", "pro": "yes", "proNote": "volsave-pro-cli" },
+      { "label": "Windows 10/11 and Windows PE", "free": "yes", "pro": "yes", "proNote": "runs without a graphics driver" },
+      { "label": "Differential images", "free": "yes", "pro": "planned", "proNote": "in the interface" },
+      { "label": "Encrypted images", "free": "no", "pro": "planned" },
+      { "label": "Network targets (SMB, FTP, SFTP)", "free": "no", "pro": "planned" },
+      { "label": "Scheduling and retention", "free": "no", "pro": "planned" }
+    ]
+  },
+  "pro": {
+    "eyebrow": "VolSave Pro",
+    "title": "The same engine. With an interface.",
+    "lead": "VolSave Pro builds on the same libraries as the free command line tool – with a graphical interface that also runs in Windows PE and in virtual machines without a graphics driver.",
+    "ctaBuy": "Request a license",
+    "ctaFree": "Go to the free version",
+    "now": {
+      "title": "What VolSave Pro does today.",
+      "items": [
+        { "title": "Pick instead of type", "text": "Disks and partitions at a glance. Choose a whole disk or a single volume and back it up." },
+        { "title": "Restore with verification", "text": "Restore disk and volume images and check the result – also without a license." },
+        { "title": "Runs everywhere", "text": "Windows 10/11 and Windows PE. The software renderer needs no graphics driver." },
+        { "title": "Command line included", "text": "volsave-pro-cli.exe offers the same commands as the free volsave, for cmd, PowerShell, scripts and Task Scheduler." }
+      ]
+    },
+    "license": {
+      "eyebrow": "License",
+      "title": "Buy once. Offline. No subscription.",
+      "text": "Your license key is checked inside the program, without contacting a server. That works in Windows PE and in isolated networks, too.",
+      "facts": [
+        { "term": "Who", "desc": "Per person or company, not tied to a device." },
+        { "term": "Term", "desc": "Perpetual, including one year of updates." },
+        { "term": "Activation", "desc": "None. The key is checked offline." },
+        { "term": "Without a license", "desc": "Show disks and restore images. Backing up needs a license." }
+      ]
+    },
+    "planned": {
+      "title": "What comes next.",
+      "lead": "Planned for upcoming versions of VolSave Pro:",
+      "items": [
+        "Encrypted images",
+        "Network targets: SMB, FTP, SFTP",
+        "Differential backups in the interface",
+        "German interface",
+        "Scheduling",
+        "Retention rules"
+      ]
+    },
+    "buy": {
+      "title": "Get VolSave Pro.",
+      "text": "Online purchase is on its way. Until then, you can get a license by email.",
+      "cta": "Request a license by email",
+      "fine": "You will receive prices and terms with the offer."
+    }
+  },
+  "faq": {
+    "title": "Frequently asked questions.",
+    "lead": "What to know before your first image.",
+    "more": "Your question is not here? Write to",
+    "items": [
+      {
+        "q": "What is the difference between VolSave and VolSave Pro?",
+        "a": [
+          "VolSave is the free command line tool under the GPL-3.0. It backs up, verifies, restores and merges images.",
+          "VolSave Pro is a separate, commercial product with a graphical interface. It uses the same libraries; features such as encrypted images and network targets are planned there."
+        ]
+      },
+      {
+        "q": "Can I back up while Windows is running?",
+        "a": [
+          "Yes. VolSave uses the Windows Volume Shadow Copy Service (VSS). The image shows the state at the moment of the snapshot, even if you keep working."
+        ]
+      },
+      {
+        "q": "Does VolSave work in Windows PE?",
+        "a": [
+          "Yes, without installation. In Windows PE VolSave reads volumes directly without VSS, because the installed Windows is not running there. That way you can also restore the disk Windows normally boots from."
+        ]
+      },
+      {
+        "q": "How does VolSave handle BitLocker?",
+        "a": [
+          "Unlocked BitLocker volumes – always the case for the running Windows – are saved decrypted through a VSS snapshot: only used blocks, compressed and consistent. The image then holds the data unencrypted, so keep it safe. A restored copy is not encrypted until you turn BitLocker on again.",
+          "With --bitlocker-raw VolSave copies such partitions as encrypted sectors instead. Locked volumes, e.g. in Windows PE without manage-bde -unlock, can only be copied that way."
+        ]
+      },
+      {
+        "q": "What are differential images?",
+        "a": [
+          "A differential image (--diff) stores only what changed since a full backup. It builds on that full backup's hash list. There are no incremental chains: to restore, you need only the differential image and its full backup.",
+          "volsave merge combines both into a new full image."
+        ]
+      },
+      {
+        "q": "Can I clone to a different disk?",
+        "a": [
+          "Yes, with volsave restore … HD1. The clone keeps the disk ID of the original. While both disks are attached, Windows keeps the clone offline. Do not set it online there, or Windows gives it a new ID and it no longer boots. Remove the original disk and boot from the clone."
+        ]
+      },
+      {
+        "q": "Which Windows versions are supported?",
+        "a": [
+          "Windows 10 and 11 as well as Windows PE. Windows 10 and 11 with BIOS/MBR and with UEFI/GPT have been cloned and booted successfully, in virtual machines and on real hardware."
+        ]
+      },
+      {
+        "q": "Is VolSave ready for use?",
+        "a": [
+          "VolSave is in early development, but already in use. Check every important image with volsave verify and test a restore before you rely on it – as with any backup tool."
+        ]
+      }
+    ]
+  },
+  "legal": {
+    "title": "Legal notice",
+    "notice": "Placeholder: please fill in name, address and contact details before the site goes live.",
+    "sections": [
+      {
+        "heading": "Information according to § 5 DDG (German Digital Services Act)",
+        "paragraphs": ["[First name Last name]<br>[Street and number]<br>[Postcode City]<br>Germany"]
+      },
+      {
+        "heading": "Contact",
+        "paragraphs": ["Email: {email}"]
+      },
+      {
+        "heading": "Responsible for content according to § 18 (2) MStV",
+        "paragraphs": ["[First name Last name], address as above"]
+      },
+      {
+        "heading": "Liability for links",
+        "paragraphs": ["This website contains links to external third-party websites whose content we cannot influence. The respective provider or operator is always responsible for that content. If we become aware of any legal violation, we will remove such links immediately."]
+      }
+    ]
+  },
+  "privacy": {
+    "title": "Privacy policy",
+    "notice": "Placeholder: please fill in the controller and hosting provider and have the text reviewed before publishing.",
+    "intro": "This website uses no cookies, no tracking, no analytics and loads no content such as fonts or scripts from third-party servers.",
+    "sections": [
+      {
+        "heading": "Controller",
+        "paragraphs": ["[First name Last name], [Address], email: {email}"]
+      },
+      {
+        "heading": "Hosting and server logs",
+        "paragraphs": [
+          "This website is hosted by [hosting provider, address]. When you open a page, the provider processes technically necessary data: IP address, date and time, requested address, amount of data transferred, browser and operating system.",
+          "The legal basis is Art. 6 (1) (f) GDPR; our legitimate interest is providing the website securely and reliably. The logs are deleted after [number] days."
+        ]
+      },
+      {
+        "heading": "Contact by email",
+        "paragraphs": ["If you write to us, we process your details to answer your request (Art. 6 (1) (b) or (f) GDPR). We delete the data once it is no longer needed for that purpose and no legal retention obligations apply."]
+      },
+      {
+        "heading": "Links to GitHub",
+        "paragraphs": ["Downloads and source code are hosted on GitHub (GitHub Inc., USA). GitHub's privacy policy applies only once you follow such a link."]
+      },
+      {
+        "heading": "Your rights",
+        "paragraphs": ["You have the right of access, rectification, erasure, restriction of processing, data portability and objection (Art. 15–21 GDPR), as well as the right to lodge a complaint with a data protection supervisory authority."]
+      }
+    ]
+  }
+}

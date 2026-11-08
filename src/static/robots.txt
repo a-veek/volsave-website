@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://volumesave.de/sitemap.xml

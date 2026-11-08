@@ -1,0 +1,282 @@
+{
+  "ui": {
+    "skipToContent": "Zum Inhalt springen",
+    "home": "Startseite",
+    "mainNav": "Hauptnavigation",
+    "footerNav": "Fußzeile",
+    "language": "Sprache",
+    "sourceCode": "Quellcode",
+    "footerTagline": "Datenträger-Images für Windows. Geschrieben in Rust.",
+    "footerFine": "Windows und BitLocker sind Marken der Microsoft Corporation.",
+    "yes": "Ja",
+    "no": "Nein",
+    "planned": "Geplant",
+    "notFound": { "title": "Diese Seite gibt es nicht.", "link": "Zur Startseite" }
+  },
+  "pages": {
+    "home": {
+      "navLabel": "VolSave",
+      "metaTitle": "VolSave – Datenträger und Volumes unter Windows sichern",
+      "metaDescription": "VolSave sichert ganze Datenträger und einzelne Volumes unter Windows 10/11 und Windows PE: konsistent über VSS, komprimiert mit zstd, kostenlos und Open Source."
+    },
+    "pro": {
+      "navLabel": "Pro",
+      "metaTitle": "VolSave Pro – die grafische Oberfläche für VolSave",
+      "metaDescription": "VolSave Pro: Sichern und Wiederherstellen mit grafischer Oberfläche, auch in Windows PE. Dauerhafte Lizenz pro Person oder Firma, offline geprüft."
+    },
+    "faq": {
+      "navLabel": "FAQ",
+      "metaTitle": "Häufige Fragen – VolSave",
+      "metaDescription": "Antworten zu VolSave: VSS, Windows PE, BitLocker, Differenz-Images, Klonen auf einen anderen Datenträger und Lizenzen."
+    },
+    "legal": {
+      "navLabel": "Impressum",
+      "metaTitle": "Impressum – VolSave",
+      "metaDescription": "Impressum von volumesave.de."
+    },
+    "privacy": {
+      "navLabel": "Datenschutz",
+      "metaTitle": "Datenschutzerklärung – VolSave",
+      "metaDescription": "Datenschutzerklärung von volumesave.de."
+    }
+  },
+  "home": {
+    "eyebrow": "Datenträger-Images für Windows",
+    "title": "Ganze Datenträger sichern. Und genau so zurückspielen.",
+    "lead": "VolSave sichert Windows-Datenträger und Volumes im laufenden Betrieb, prüft jedes Image und stellt es Sektor für Sektor wieder her – bis Windows wieder startet.",
+    "ctaDownload": "VolSave herunterladen",
+    "ctaPro": "VolSave Pro ansehen",
+    "ctaFine": "Kostenlos und Open Source (GPL-3.0). Windows 10/11 und Windows PE, ohne Installation.",
+    "diskmap": {
+      "disk": "Datenträger",
+      "image": "Image",
+      "used": "Belegte Blöcke",
+      "free": "Freier Speicher, wird übersprungen",
+      "compressed": "Image, mit zstd komprimiert",
+      "caption": "VolSave liest nur die belegten Blöcke eines Volumes und komprimiert sie. Das Image ist dadurch deutlich kleiner als der Datenträger."
+    },
+    "features": {
+      "title": "Alles, was ein Image braucht.",
+      "lead": "Kein Agent, kein Dienst, keine Cloud. Eine EXE-Datei, die sichert, prüft und wiederherstellt.",
+      "items": [
+        { "title": "Im laufenden Betrieb", "text": "Gesichert wird über den Volumeschattenkopie-Dienst (VSS). Windows läuft weiter, das Image bleibt konsistent." },
+        { "title": "Ganzer Datenträger", "text": "Partitionstabelle, Bootcode und alle Partitionen in einem Image – für BIOS/MBR und UEFI/GPT." },
+        { "title": "Nur belegte Blöcke", "text": "Freier Speicher wird übersprungen, der Rest mit zstd komprimiert. Was Windows über FilesNotToBackup ausschließt, bleibt draußen." },
+        { "title": "Differenz-Images", "text": "Nach einer Vollsicherung nur noch die Änderungen speichern. Keine langen Ketten: jedes Differenz-Image braucht nur seine Vollsicherung." },
+        { "title": "Prüfen statt hoffen", "text": "verify prüft ein Image jederzeit. restore --verify liest das Ziel nach dem Zurückspielen wieder ein und vergleicht es." },
+        { "title": "Auch aus Windows PE", "text": "Läuft ohne Installation in Windows PE. Dort liest VolSave die Volumes direkt, weil das installierte Windows nicht läuft." }
+      ]
+    },
+    "cli": {
+      "eyebrow": "Kommandozeile",
+      "title": "Für Skripte gemacht.",
+      "text": "Jeder Befehl lässt sich aus cmd, PowerShell oder der Aufgabenplanung aufrufen. VolSave schreibt ein Protokoll neben jedes Image und meldet das Ergebnis über einen eindeutigen Rückgabewert.",
+      "points": [
+        "Rückgabewerte: 0 = OK, 1 = Fehler, 2 = OK mit Warnungen",
+        "Protokoll neben dem Image, auf Wunsch mit jedem VSS-Aufruf",
+        "Vorhandene Images werden nur mit --overwrite ersetzt",
+        "Eine Partition aus einem Datenträger-Image einzeln zurückspielen"
+      ],
+      "terminalTitle": "Eingabeaufforderung (Administrator)",
+      "terminalLabel": "Beispielbefehle: Datenträger anzeigen, Datenträger 0 sichern, Differenz-Image erstellen, Image prüfen und auf Datenträger 1 wiederherstellen.",
+      "cmd": {
+        "list": "Datenträger und Volumes anzeigen",
+        "backup": "Ganzen Datenträger 0 sichern",
+        "diff": "Nur die Änderungen seit der Vollsicherung",
+        "verify": "Image prüfen",
+        "restore": "Auf Datenträger 1 klonen und nachprüfen"
+      }
+    },
+    "compare": {
+      "title": "Kostenlos oder Pro.",
+      "lead": "Die Kommandozeile ist und bleibt frei. VolSave Pro ergänzt eine grafische Oberfläche für alle, die lieber klicken."
+    },
+    "tested": {
+      "title": "Auf echter Hardware getestet.",
+      "items": [
+        { "value": "Windows 10 und 11", "label": "Ganze Datenträger geklont und gestartet" },
+        { "value": "BIOS/MBR und UEFI/GPT", "label": "Beide Startarten wiederhergestellt" },
+        { "value": "VM und Hardware", "label": "Auch aus Windows PE heraus, zurück auf dieselbe NVMe-SSD" }
+      ],
+      "statusLabel": "Stand:",
+      "status": "VolSave ist in früher Entwicklung, aber im Einsatz. Prüfen Sie Ihre Images mit verify, bevor Sie sich auf sie verlassen."
+    },
+    "cta": {
+      "title": "Bereit für das erste Image?",
+      "text": "Eine EXE-Datei, keine Installation. Als Administrator starten und volsave --help eingeben.",
+      "faq": "Häufige Fragen"
+    }
+  },
+  "compare": {
+    "caption": "Vergleich von VolSave und VolSave Pro",
+    "featureCol": "Funktion",
+    "freeSub": "Kommandozeile · GPL-3.0",
+    "proSub": "Grafische Oberfläche · Lizenz",
+    "rows": [
+      { "label": "Volumes und ganze Datenträger sichern", "free": "yes", "pro": "yes", "proNote": "mit Lizenz" },
+      { "label": "Images prüfen und wiederherstellen", "free": "yes", "pro": "yes", "proNote": "auch ohne Lizenz" },
+      { "label": "Grafische Oberfläche", "free": "no", "pro": "yes" },
+      { "label": "Kommandozeile für Skripte", "free": "yes", "pro": "yes", "proNote": "volsave-pro-cli" },
+      { "label": "Windows 10/11 und Windows PE", "free": "yes", "pro": "yes", "proNote": "läuft auch ohne Grafiktreiber" },
+      { "label": "Differenz-Images", "free": "yes", "pro": "planned", "proNote": "in der Oberfläche" },
+      { "label": "Verschlüsselte Images", "free": "no", "pro": "planned" },
+      { "label": "Netzwerkziele (SMB, FTP, SFTP)", "free": "no", "pro": "planned" },
+      { "label": "Zeitplanung und Aufbewahrung", "free": "no", "pro": "planned" }
+    ]
+  },
+  "pro": {
+    "eyebrow": "VolSave Pro",
+    "title": "Dieselbe Technik. Mit Oberfläche.",
+    "lead": "VolSave Pro baut auf denselben Bibliotheken auf wie die freie Kommandozeile – mit einer grafischen Oberfläche, die auch in Windows PE und virtuellen Maschinen ohne Grafiktreiber läuft.",
+    "ctaBuy": "Lizenz anfragen",
+    "ctaFree": "Zur kostenlosen Version",
+    "now": {
+      "title": "Was VolSave Pro heute kann.",
+      "items": [
+        { "title": "Auswählen statt tippen", "text": "Datenträger und Partitionen auf einen Blick. Einen ganzen Datenträger oder ein einzelnes Volume wählen und sichern." },
+        { "title": "Wiederherstellen mit Prüfung", "text": "Datenträger- und Volume-Images zurückspielen und das Ergebnis prüfen – auch ohne Lizenz." },
+        { "title": "Läuft überall", "text": "Windows 10/11 und Windows PE. Der Software-Renderer braucht keinen Grafiktreiber." },
+        { "title": "Kommandozeile inklusive", "text": "volsave-pro-cli.exe bietet dieselben Befehle wie das freie volsave, für cmd, PowerShell, Skripte und die Aufgabenplanung." }
+      ]
+    },
+    "license": {
+      "eyebrow": "Lizenz",
+      "title": "Einmal kaufen. Offline. Ohne Abo.",
+      "text": "Ihr Lizenzschlüssel wird im Programm geprüft, ohne Verbindung zu einem Server. Das funktioniert auch in Windows PE und in abgeschotteten Netzen.",
+      "facts": [
+        { "term": "Für wen", "desc": "Pro Person oder Firma, ohne Bindung an ein Gerät." },
+        { "term": "Laufzeit", "desc": "Dauerhaft gültig, inklusive einem Jahr Updates." },
+        { "term": "Aktivierung", "desc": "Keine. Der Schlüssel wird offline geprüft." },
+        { "term": "Ohne Lizenz", "desc": "Datenträger anzeigen und Images wiederherstellen. Sichern braucht eine Lizenz." }
+      ]
+    },
+    "planned": {
+      "title": "Was als Nächstes kommt.",
+      "lead": "Geplant für kommende Versionen von VolSave Pro:",
+      "items": [
+        "Verschlüsselte Images",
+        "Netzwerkziele: SMB, FTP, SFTP",
+        "Differenz-Sicherung in der Oberfläche",
+        "Deutsche Oberfläche",
+        "Zeitplanung",
+        "Aufbewahrungsregeln"
+      ]
+    },
+    "buy": {
+      "title": "VolSave Pro erhalten.",
+      "text": "Der Online-Kauf ist in Vorbereitung. Bis dahin erhalten Sie eine Lizenz per E-Mail.",
+      "cta": "Lizenz per E-Mail anfragen",
+      "fine": "Preise und Bedingungen erhalten Sie mit dem Angebot."
+    }
+  },
+  "faq": {
+    "title": "Häufige Fragen.",
+    "lead": "Was Sie vor dem ersten Image wissen sollten.",
+    "more": "Ihre Frage ist nicht dabei? Schreiben Sie an",
+    "items": [
+      {
+        "q": "Was ist der Unterschied zwischen VolSave und VolSave Pro?",
+        "a": [
+          "VolSave ist das kostenlose Kommandozeilenprogramm unter der GPL-3.0. Es sichert, prüft, stellt wieder her und führt Images zusammen.",
+          "VolSave Pro ist ein getrenntes, kommerzielles Produkt mit grafischer Oberfläche. Es nutzt dieselben Bibliotheken; Funktionen wie verschlüsselte Images und Netzwerkziele sind dort geplant."
+        ]
+      },
+      {
+        "q": "Kann ich sichern, während Windows läuft?",
+        "a": [
+          "Ja. VolSave nutzt den Volumeschattenkopie-Dienst (VSS) von Windows. Das Image zeigt den Zustand zum Zeitpunkt des Snapshots, auch wenn währenddessen weitergearbeitet wird."
+        ]
+      },
+      {
+        "q": "Funktioniert VolSave in Windows PE?",
+        "a": [
+          "Ja, ohne Installation. In Windows PE liest VolSave die Volumes direkt ohne VSS, denn das installierte Windows läuft dort nicht. So lässt sich auch ein Datenträger wiederherstellen, von dem Windows sonst startet."
+        ]
+      },
+      {
+        "q": "Wie geht VolSave mit BitLocker um?",
+        "a": [
+          "Entsperrte BitLocker-Volumes – beim laufenden Windows immer der Fall – werden entschlüsselt über einen VSS-Snapshot gesichert: nur belegte Blöcke, komprimiert und konsistent. Das Image enthält die Daten dann unverschlüsselt; bewahren Sie es sicher auf. Eine wiederhergestellte Kopie ist unverschlüsselt, bis Sie BitLocker wieder einschalten.",
+          "Mit --bitlocker-raw kopiert VolSave solche Partitionen stattdessen als verschlüsselte Sektoren. Gesperrte Volumes, etwa in Windows PE ohne manage-bde -unlock, lassen sich nur so kopieren."
+        ]
+      },
+      {
+        "q": "Was sind Differenz-Images?",
+        "a": [
+          "Ein Differenz-Image (--diff) speichert nur, was sich seit einer Vollsicherung geändert hat. Es baut auf der Hashliste dieser Vollsicherung auf. Es gibt keine inkrementellen Ketten: Zum Wiederherstellen brauchen Sie nur das Differenz-Image und seine Vollsicherung.",
+          "Mit volsave merge führen Sie beide zu einem neuen Voll-Image zusammen."
+        ]
+      },
+      {
+        "q": "Kann ich auf einen anderen Datenträger klonen?",
+        "a": [
+          "Ja, mit volsave restore … HD1. Der Klon behält die Datenträgerkennung des Originals. Solange beide angeschlossen sind, lässt Windows den Klon offline. Schalten Sie ihn dort nicht online, sonst vergibt Windows eine neue Kennung und er startet nicht mehr. Klemmen Sie das Original ab und starten Sie vom Klon."
+        ]
+      },
+      {
+        "q": "Welche Windows-Versionen werden unterstützt?",
+        "a": [
+          "Windows 10 und 11 sowie Windows PE. Geklont und erfolgreich gestartet wurden Windows 10 und 11 mit BIOS/MBR und mit UEFI/GPT, in virtuellen Maschinen und auf echter Hardware."
+        ]
+      },
+      {
+        "q": "Ist VolSave schon für den Einsatz bereit?",
+        "a": [
+          "VolSave ist in früher Entwicklung, wird aber bereits eingesetzt. Prüfen Sie jedes wichtige Image mit volsave verify und testen Sie die Wiederherstellung, bevor Sie sich darauf verlassen – das gilt für jedes Backup-Programm."
+        ]
+      }
+    ]
+  },
+  "legal": {
+    "title": "Impressum",
+    "notice": "Platzhalter: Bitte Name, Anschrift und Kontaktdaten eintragen, bevor die Seite online geht.",
+    "sections": [
+      {
+        "heading": "Angaben gemäß § 5 DDG",
+        "paragraphs": ["[Vorname Nachname]<br>[Straße Hausnummer]<br>[PLZ Ort]<br>Deutschland"]
+      },
+      {
+        "heading": "Kontakt",
+        "paragraphs": ["E-Mail: {email}"]
+      },
+      {
+        "heading": "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV",
+        "paragraphs": ["[Vorname Nachname], Anschrift wie oben"]
+      },
+      {
+        "heading": "Haftung für Links",
+        "paragraphs": ["Diese Website enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für diese fremden Inhalte ist stets der jeweilige Anbieter oder Betreiber verantwortlich. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen."]
+      }
+    ]
+  },
+  "privacy": {
+    "title": "Datenschutzerklärung",
+    "notice": "Platzhalter: Bitte Verantwortlichen und Hosting-Anbieter eintragen und den Text vor der Veröffentlichung prüfen lassen.",
+    "intro": "Diese Website verwendet keine Cookies, kein Tracking, keine Analyse-Dienste und lädt keine Inhalte von fremden Servern wie Schriftarten oder Skripte.",
+    "sections": [
+      {
+        "heading": "Verantwortlicher",
+        "paragraphs": ["[Vorname Nachname], [Anschrift], E-Mail: {email}"]
+      },
+      {
+        "heading": "Hosting und Server-Protokolle",
+        "paragraphs": [
+          "Diese Website wird bei [Hosting-Anbieter, Anschrift] gehostet. Beim Aufruf einer Seite verarbeitet der Anbieter technisch notwendige Daten: IP-Adresse, Datum und Uhrzeit, aufgerufene Adresse, übertragene Datenmenge, Browser und Betriebssystem.",
+          "Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO; unser berechtigtes Interesse ist die sichere und zuverlässige Bereitstellung der Website. Die Protokolle werden nach [Anzahl] Tagen gelöscht."
+        ]
+      },
+      {
+        "heading": "Kontakt per E-Mail",
+        "paragraphs": ["Wenn Sie uns schreiben, verarbeiten wir Ihre Angaben, um Ihre Anfrage zu beantworten (Art. 6 Abs. 1 lit. b oder f DSGVO). Wir löschen die Daten, wenn sie dafür nicht mehr nötig sind und keine gesetzlichen Aufbewahrungspflichten bestehen."]
+      },
+      {
+        "heading": "Links zu GitHub",
+        "paragraphs": ["Download und Quellcode liegen bei GitHub (GitHub Inc., USA). Erst wenn Sie einem solchen Link folgen, gelten die Datenschutzbestimmungen von GitHub."]
+      },
+      {
+        "heading": "Ihre Rechte",
+        "paragraphs": ["Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch (Art. 15–21 DSGVO) sowie das Recht auf Beschwerde bei einer Datenschutz-Aufsichtsbehörde."]
+      }
+    ]
+  }
+}

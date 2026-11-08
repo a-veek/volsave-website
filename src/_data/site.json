@@ -1,0 +1,13 @@
+{
+  "name": "VolSave",
+  "url": "https://volumesave.de",
+  "defaultLang": "de",
+  "languages": ["de", "en", "es"],
+  "languageNames": { "de": "Deutsch", "en": "English", "es": "Español" },
+  "locales": { "de": "de_DE", "en": "en_US", "es": "es_ES" },
+  "downloadUrl": "https://github.com/a-veek/VolSave/releases",
+  "sourceUrl": "https://github.com/a-veek/VolSave",
+  "contactEmail": "kontakt@volumesave.de",
+  "nav": ["home", "pro", "faq"],
+  "footerNav": ["legal", "privacy"]
+}

@@ -1,0 +1,82 @@
+{%- set t = i18n[lang] -%}
+{%- set p = t.pages[pageKey] -%}
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ p.metaTitle }}</title>
+  <meta name="description" content="{{ p.metaDescription }}">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="{{ page.url | absolute(site.url) }}">
+  {%- for l in site.languages %}
+  <link rel="alternate" hreflang="{{ l }}" href="{{ page.url | swapLang(l) | absolute(site.url) }}">
+  {%- endfor %}
+  <link rel="alternate" hreflang="x-default" href="{{ page.url | swapLang(site.defaultLang) | absolute(site.url) }}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:title" content="{{ p.metaTitle }}">
+  <meta property="og:description" content="{{ p.metaDescription }}">
+  <meta property="og:url" content="{{ page.url | absolute(site.url) }}">
+  <meta property="og:locale" content="{{ site.locales[lang] }}">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">{{ t.ui.skipToContent }}</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="/{{ lang }}/" aria-label="{{ site.name }} – {{ t.ui.home }}">
+        {% include "partials/logo.njk" %}
+        <span>{{ site.name }}</span>
+      </a>
+      <nav class="site-nav" aria-label="{{ t.ui.mainNav }}">
+        <ul>
+          {%- for key in site.nav %}
+          {%- set href = "/" + lang + "/" + ("" if key == "home" else key + "/") %}
+          <li><a href="{{ href }}"{% if page.url == href %} aria-current="page"{% endif %}>{{ t.pages[key].navLabel }}</a></li>
+          {%- endfor %}
+        </ul>
+      </nav>
+      <nav class="lang-switch" aria-label="{{ t.ui.language }}">
+        <ul>
+          {%- for l in site.languages %}
+          <li><a href="{{ page.url | swapLang(l) }}" hreflang="{{ l }}" lang="{{ l }}"{% if l == lang %} aria-current="true"{% endif %} title="{{ site.languageNames[l] }}">{{ l | upper }}</a></li>
+          {%- endfor %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__brand">
+        <a class="brand brand--small" href="/{{ lang }}/">
+          {% include "partials/logo.njk" %}
+          <span>{{ site.name }}</span>
+        </a>
+        <p>{{ t.ui.footerTagline }}</p>
+      </div>
+      <nav aria-label="{{ t.ui.footerNav }}">
+        <ul class="site-footer__links">
+          {%- for key in site.nav %}
+          <li><a href="/{{ lang }}/{{ '' if key == 'home' else key + '/' }}">{{ t.pages[key].navLabel }}</a></li>
+          {%- endfor %}
+          <li><a href="{{ site.sourceUrl }}">{{ t.ui.sourceCode }}</a></li>
+          {%- for key in site.footerNav %}
+          <li><a href="/{{ lang }}/{{ key }}/">{{ t.pages[key].navLabel }}</a></li>
+          {%- endfor %}
+        </ul>
+      </nav>
+      <p class="site-footer__fine">© {{ build.year }} {{ site.name }}. {{ t.ui.footerFine }}</p>
+    </div>
+  </footer>
+</body>
+</html>

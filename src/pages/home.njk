@@ -1,0 +1,132 @@
+---
+pagination:
+  data: site.languages
+  size: 1
+  alias: lang
+pageKey: home
+permalink: "/{{ lang }}/"
+layout: layouts/base.njk
+---
+{%- set t = i18n[lang] -%}
+{%- set h = t.home -%}
+
+<section class="hero">
+  <div class="container hero__inner">
+    <p class="eyebrow">{{ h.eyebrow }}</p>
+    <h1 class="display">{{ h.title }}</h1>
+    <p class="lead">{{ h.lead }}</p>
+    <div class="actions">
+      <a class="button button--primary" href="{{ site.downloadUrl }}">{{ h.ctaDownload }}</a>
+      <a class="button button--link" href="/{{ lang }}/pro/">{{ h.ctaPro }} <span aria-hidden="true">›</span></a>
+    </div>
+    <p class="fine">{{ h.ctaFine }}</p>
+  </div>
+
+  {# Signature element: a disk read block by block. Only the used blocks
+     (solid) go into the image, compressed; free space (outlined) is skipped. #}
+  {%- set pattern = "111111110011100000111111111000000111000000111110000011110000000011100000" -%}
+  <figure class="diskmap container" aria-labelledby="diskmap-caption">
+    <div class="diskmap__panel">
+      <div class="diskmap__row">
+        <span class="diskmap__label">{{ h.diskmap.disk }}</span>
+        <div class="diskmap__track" aria-hidden="true">
+          {%- for c in pattern | list %}
+          <span class="cell{% if c == '1' %} cell--used{% endif %}" style="--i:{{ loop.index0 }}"></span>
+          {%- endfor %}
+        </div>
+      </div>
+      <div class="diskmap__row">
+        <span class="diskmap__label">{{ h.diskmap.image }}</span>
+        <div class="diskmap__image" aria-hidden="true"><span></span></div>
+      </div>
+      <ul class="diskmap__legend">
+        <li><span class="swatch swatch--used" aria-hidden="true"></span>{{ h.diskmap.used }}</li>
+        <li><span class="swatch swatch--free" aria-hidden="true"></span>{{ h.diskmap.free }}</li>
+        <li><span class="swatch swatch--image" aria-hidden="true"></span>{{ h.diskmap.compressed }}</li>
+      </ul>
+    </div>
+    <figcaption id="diskmap-caption">{{ h.diskmap.caption }}</figcaption>
+  </figure>
+</section>
+
+<section class="section section--alt" aria-labelledby="features-title">
+  <div class="container">
+    <header class="section__head">
+      <h2 id="features-title">{{ h.features.title }}</h2>
+      <p class="section__lead">{{ h.features.lead }}</p>
+    </header>
+    <ul class="grid grid--3 features">
+      {%- for f in h.features.items %}
+      <li class="card">
+        <h3>{{ f.title }}</h3>
+        <p>{{ f.text }}</p>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="cli-title">
+  <div class="container split">
+    <div class="split__text">
+      <p class="eyebrow">{{ h.cli.eyebrow }}</p>
+      <h2 id="cli-title">{{ h.cli.title }}</h2>
+      <p>{{ h.cli.text }}</p>
+      <ul class="checklist">
+        {%- for item in h.cli.points %}
+        <li>{{ item }}</li>
+        {%- endfor %}
+      </ul>
+    </div>
+    <div class="terminal" role="img" aria-label="{{ h.cli.terminalLabel }}">
+      <div class="terminal__bar" aria-hidden="true"><span></span><span></span><span></span><em>{{ h.cli.terminalTitle }}</em></div>
+<pre class="terminal__body" aria-hidden="true"><code><span class="c"># {{ h.cli.cmd.list }}</span>
+<span class="p">&gt;</span> volsave list
+
+<span class="c"># {{ h.cli.cmd.backup }}</span>
+<span class="p">&gt;</span> volsave backup HD0 E:\backup\disk0.dimg
+
+<span class="c"># {{ h.cli.cmd.diff }}</span>
+<span class="p">&gt;</span> volsave backup C: E:\backup\c-mon.dimg --diff E:\backup\c.dhsh
+
+<span class="c"># {{ h.cli.cmd.verify }}</span>
+<span class="p">&gt;</span> volsave verify E:\backup\disk0.dimg
+
+<span class="c"># {{ h.cli.cmd.restore }}</span>
+<span class="p">&gt;</span> volsave restore E:\backup\disk0.dimg HD1 --verify</code></pre>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" aria-labelledby="compare-title">
+  <div class="container">
+    <header class="section__head">
+      <h2 id="compare-title">{{ h.compare.title }}</h2>
+      <p class="section__lead">{{ h.compare.lead }}</p>
+    </header>
+    {% include "partials/compare.njk" %}
+  </div>
+</section>
+
+<section class="section" aria-labelledby="tested-title">
+  <div class="container narrow">
+    <h2 id="tested-title">{{ h.tested.title }}</h2>
+    <ul class="stats">
+      {%- for s in h.tested.items %}
+      <li><strong>{{ s.value }}</strong><span>{{ s.label }}</span></li>
+      {%- endfor %}
+    </ul>
+    <p class="note"><strong>{{ h.tested.statusLabel }}</strong> {{ h.tested.status }}</p>
+  </div>
+</section>
+
+<section class="section section--cta" aria-labelledby="cta-title">
+  <div class="container narrow center">
+    <h2 id="cta-title">{{ h.cta.title }}</h2>
+    <p class="section__lead">{{ h.cta.text }}</p>
+    <div class="actions actions--center">
+      <a class="button button--primary" href="{{ site.downloadUrl }}">{{ h.ctaDownload }}</a>
+      <a class="button button--link" href="/{{ lang }}/faq/">{{ h.cta.faq }} <span aria-hidden="true">›</span></a>
+    </div>
+  </div>
+</section>
