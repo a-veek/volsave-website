@@ -120,7 +120,7 @@
       { "label": "One EXE file, no installation", "free": "yes", "freeNote": "volsave.exe", "pro": "yes", "proNote": "volsave-pro.exe: interface and command line" },
       { "label": "Windows 10/11 and Windows PE", "free": "yes", "pro": "yes", "proNote": "runs without a graphics driver" },
       { "label": "Differential images", "free": "yes", "pro": "yes", "proNote": "also in the interface" },
-      { "label": "Encrypted images", "free": "no", "pro": "planned" },
+      { "label": "Encrypted images", "free": "no", "pro": "yes", "proNote": "AES-256, with a password" },
       { "label": "Network targets (SMB, FTP, SFTP)", "free": "no", "pro": "planned" },
       { "label": "Scheduling and retention", "free": "no", "pro": "planned" }
     ]
@@ -138,7 +138,8 @@
         { "title": "Pick instead of type", "text": "Disks and partitions at a glance. Choose a whole disk or a single volume and back it up – optionally as a differential image that stores only what changed since the full backup." },
         { "title": "Restore with verification", "text": "Restore disk and volume images and check the result – also without a license." },
         { "title": "Runs everywhere", "text": "Windows 10/11 and Windows PE. The software renderer needs no graphics driver." },
-        { "title": "One file for both", "text": "Double-click volsave-pro.exe and the interface opens. Called with arguments, the same file works as a command line – with the same commands as the free volsave, for cmd, PowerShell, scripts and Task Scheduler." }
+        { "title": "One file for both", "text": "Double-click volsave-pro.exe and the interface opens. Called with arguments, the same file works as a command line – with the same commands as the free volsave, for cmd, PowerShell, scripts and Task Scheduler." },
+        { "title": "Encrypted images", "text": "On request a password protects the image: AES-256-GCM, with the key derived from the password using Argon2id. That covers split images and differential images, too. Without the password an encrypted image cannot be restored – there is no back door." }
       ]
     },
     "license": {
@@ -156,7 +157,6 @@
       "title": "What comes next.",
       "lead": "Planned for upcoming versions of VolSave Pro:",
       "items": [
-        "Encrypted images",
         "Network targets: SMB, FTP, SFTP",
         "German interface",
         "Scheduling",
@@ -178,7 +178,7 @@
         "q": "What is the difference between VolSave and VolSave Pro?",
         "a": [
           "VolSave is the free command line tool under the GPL-3.0. It backs up, verifies, restores and merges images.",
-          "VolSave Pro is a separate, commercial product with a graphical interface. It uses the same libraries; features such as encrypted images and network targets are planned there."
+          "VolSave Pro is a separate, commercial product with a graphical interface. It uses the same libraries and can also encrypt images with a password; network targets are planned there."
         ]
       },
       {
@@ -197,7 +197,16 @@
         "q": "How does VolSave handle BitLocker?",
         "a": [
           "Unlocked BitLocker volumes – always the case for the running Windows – are saved decrypted through a VSS snapshot: only used blocks, compressed and consistent. The image then holds the data unencrypted, so keep it safe. A restored copy is not encrypted until you turn BitLocker on again.",
-          "With --bitlocker-raw VolSave copies such partitions as encrypted sectors instead. Locked volumes, e.g. in Windows PE without manage-bde -unlock, can only be copied that way."
+          "With --bitlocker-raw VolSave copies such partitions as encrypted sectors instead. Locked volumes, e.g. in Windows PE without manage-bde -unlock, can only be copied that way.",
+          "VolSave Pro can also encrypt the image with its own password. The restored copy is still not encrypted with BitLocker; turn BitLocker on again afterwards."
+        ]
+      },
+      {
+        "q": "Can I encrypt images?",
+        "a": [
+          "Yes, with VolSave Pro. Choose “Encrypt” when backing up and set a password of at least 8 characters. The image and its hash list are encrypted with AES-256-GCM, with the key derived from the password using Argon2id. A differential image of an encrypted full image is always encrypted, with the full image’s password.",
+          "On the command line use --encrypt; for scripts and Task Scheduler, --password-file reads the password from a file. The password is never an argument, so it does not show up in the process list.",
+          "To restore, VolSave Pro asks for the password; no license is needed for that. Keep the password safe: without it an encrypted image cannot be restored. There is no recovery and no back door."
         ]
       },
       {
