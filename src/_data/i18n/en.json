@@ -146,7 +146,7 @@
       "text": "Your license key is checked inside the program, without contacting a server. That works in Windows PE and in isolated networks, too.",
       "facts": [
         { "term": "Who", "desc": "Per person or company, not tied to a device." },
-        { "term": "Term", "desc": "Perpetual for one major version, with all its updates. A license for 0.x.x covers every version up to 0.9.9; 1.0.0 needs a new license." },
+        { "term": "Term", "desc": "Perpetual for one major version, with all its updates." },
         { "term": "Activation", "desc": "None. The key is checked offline." },
         { "term": "Without a license", "desc": "Show disks and restore images. Backing up needs a license." }
       ]
@@ -164,7 +164,6 @@
     },
     "buy": {
       "title": "Get VolSave Pro.",
-      "text": "Online purchase is on its way. Until then, you can get a license by email.",
       "cta": "Request a license by email",
       "fine": "You will receive prices and terms with the offer."
     }

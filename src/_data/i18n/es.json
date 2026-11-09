@@ -146,7 +146,7 @@
       "text": "La clave de licencia se comprueba dentro del programa, sin contactar con ningún servidor. Funciona también en Windows PE y en redes aisladas.",
       "facts": [
         { "term": "Para quién", "desc": "Por persona o empresa, sin vincularse a un dispositivo." },
-        { "term": "Duración", "desc": "Perpetua para una versión principal, con todas sus actualizaciones. Una licencia para 0.x.x cubre todas las versiones hasta la 0.9.9; la 1.0.0 necesita una licencia nueva." },
+        { "term": "Duración", "desc": "Perpetua para una versión principal, con todas sus actualizaciones." },
         { "term": "Activación", "desc": "Ninguna. La clave se comprueba sin conexión." },
         { "term": "Sin licencia", "desc": "Mostrar discos y restaurar imágenes. Para copiar se necesita licencia." }
       ]
@@ -164,7 +164,6 @@
     },
     "buy": {
       "title": "Consigue VolSave Pro.",
-      "text": "La compra en línea está en preparación. Mientras tanto, puedes obtener una licencia por correo electrónico.",
       "cta": "Solicitar licencia por correo",
       "fine": "Recibirás precios y condiciones con la oferta."
     }

@@ -146,7 +146,7 @@
       "text": "Ihr Lizenzschlüssel wird im Programm geprüft, ohne Verbindung zu einem Server. Das funktioniert auch in Windows PE und in abgeschotteten Netzen.",
       "facts": [
         { "term": "Für wen", "desc": "Pro Person oder Firma, ohne Bindung an ein Gerät." },
-        { "term": "Laufzeit", "desc": "Dauerhaft gültig für eine Hauptversion, mit allen ihren Updates. Eine Lizenz für 0.x.x gilt bis 0.9.9; ab 1.0.0 braucht es eine neue Lizenz." },
+        { "term": "Laufzeit", "desc": "Dauerhaft gültig für eine Hauptversion, mit allen ihren Updates." },
         { "term": "Aktivierung", "desc": "Keine. Der Schlüssel wird offline geprüft." },
         { "term": "Ohne Lizenz", "desc": "Datenträger anzeigen und Images wiederherstellen. Sichern braucht eine Lizenz." }
       ]
@@ -164,7 +164,6 @@
     },
     "buy": {
       "title": "VolSave Pro erhalten.",
-      "text": "Der Online-Kauf ist in Vorbereitung. Bis dahin erhalten Sie eine Lizenz per E-Mail.",
       "cta": "Lizenz per E-Mail anfragen",
       "fine": "Preise und Bedingungen erhalten Sie mit dem Angebot."
     }

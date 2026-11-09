@@ -80,7 +80,9 @@ layout: layouts/base.njk
 <section class="section section--cta" id="buy" aria-labelledby="buy-title">
   <div class="container narrow center">
     <h2 id="buy-title">{{ pr.buy.title }}</h2>
+    {%- if pr.buy.text %}
     <p class="section__lead">{{ pr.buy.text }}</p>
+    {%- endif %}
     <div class="actions actions--center">
       <a class="button button--primary" href="mailto:{{ site.contactEmail[lang] }}?subject=VolSave%20Pro">{{ pr.buy.cta }}</a>
     </div>
