@@ -29,6 +29,46 @@ layout: layouts/base.njk
   {%- set pattern = "111111110011100000111111111000000111000000111110000011110000000011100000" -%}
   <figure class="diskmap container" aria-labelledby="diskmap-caption">
     <div class="diskmap__panel">
+      {#- Decorative: a hard disk being read, data flowing into an SSD. #}
+      <div class="drives" aria-hidden="true">
+        <svg class="drive drive--hdd" viewBox="0 0 120 150" focusable="false">
+          <defs>
+            <linearGradient id="drive-grad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="var(--blue)"/>
+              <stop offset="0.6" stop-color="var(--purple)"/>
+              <stop offset="1" stop-color="var(--pink)"/>
+            </linearGradient>
+          </defs>
+          <rect class="drive__case" x="2" y="2" width="116" height="146" rx="14"/>
+          <circle class="drive__screw" cx="12" cy="12" r="2.5"/><circle class="drive__screw" cx="108" cy="12" r="2.5"/>
+          <circle class="drive__screw" cx="12" cy="138" r="2.5"/><circle class="drive__screw" cx="108" cy="138" r="2.5"/>
+          <circle class="hdd__platter" cx="60" cy="62" r="46"/>
+          <g class="hdd__spin">
+            <circle class="hdd__track" cx="60" cy="62" r="36" stroke-dasharray="60 30 24 40 16 56"/>
+            <circle class="hdd__track hdd__track--inner" cx="60" cy="62" r="24" stroke-dasharray="30 18 40 26"/>
+          </g>
+          <circle class="hdd__hub" cx="60" cy="62" r="9"/>
+          <circle class="drive__screw" cx="60" cy="62" r="3"/>
+          <g class="hdd__arm">
+            <path class="hdd__arm-bar" d="M100 124 L74 76"/>
+            <rect class="hdd__head" x="69" y="69" width="9" height="11" rx="2" transform="rotate(-28 73.5 74.5)"/>
+            <circle class="hdd__pivot" cx="100" cy="124" r="9"/>
+            <circle class="drive__screw" cx="100" cy="124" r="3"/>
+          </g>
+          <circle class="drive__led" cx="20" cy="128" r="3.5"/>
+        </svg>
+        <div class="drives__flow"><span></span><span></span><span></span><span></span><span></span></div>
+        <svg class="drive drive--ssd" viewBox="0 0 150 100" focusable="false">
+          <rect class="drive__case" x="2" y="2" width="146" height="96" rx="12"/>
+          <rect class="ssd__label" x="14" y="14" width="122" height="20" rx="5"/>
+          <rect class="ssd__chip" x="14" y="46" width="26" height="22" rx="3" style="--n:0"/>
+          <rect class="ssd__chip" x="46" y="46" width="26" height="22" rx="3" style="--n:1"/>
+          <rect class="ssd__chip" x="78" y="46" width="26" height="22" rx="3" style="--n:2"/>
+          <rect class="ssd__chip" x="110" y="46" width="26" height="22" rx="3" style="--n:3"/>
+          <path class="ssd__pins" d="M14 84h4M24 84h4M34 84h4M44 84h4M54 84h4M64 84h4M74 84h4M84 84h4"/>
+          <circle class="drive__led" cx="134" cy="84" r="3.5"/>
+        </svg>
+      </div>
       <div class="diskmap__row">
         <span class="diskmap__label">{{ h.diskmap.disk }}</span>
         <div class="diskmap__track" aria-hidden="true">
