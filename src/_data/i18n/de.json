@@ -233,7 +233,7 @@
     "sections": [
       {
         "heading": "Angaben gemäß Art. 10 LSSI-CE (spanisches Gesetz 34/2002)",
-        "paragraphs": ["Alexander Veek<br>Veek.IT<br>Rua Cubelos 20<br>15172 Perillo<br>Spanien"]
+        "paragraphs": ["Veek.IT<br>Alexander Veek<br>Rua Cubelos 20<br>15172 Perillo<br>Spanien"]
       },
       {
         "heading": "Steuernummer",
@@ -255,7 +255,7 @@
     "sections": [
       {
         "heading": "Verantwortlicher",
-        "paragraphs": ["Alexander Veek, Veek.IT, Rua Cubelos 20, 15172 Perillo, Spanien, E-Mail: {email}"]
+        "paragraphs": ["Alexander Veek, Veek.IT, Rua Cubelos 20, 15172 Perillo, Spanien<br>E-Mail:&nbsp;{email}"]
       },
       {
         "heading": "Hosting und Server-Protokolle",
