@@ -119,7 +119,7 @@
       { "label": "Kommandozeile für Skripte", "free": "yes", "pro": "yes", "proNote": "in derselben EXE-Datei" },
       { "label": "Eine EXE-Datei, ohne Installation", "free": "yes", "freeNote": "volsave.exe", "pro": "yes", "proNote": "volsave-pro.exe: Oberfläche und Kommandozeile" },
       { "label": "Windows 10/11 und Windows PE", "free": "yes", "pro": "yes", "proNote": "läuft auch ohne Grafiktreiber" },
-      { "label": "Differenz-Images", "free": "yes", "pro": "planned", "proNote": "in der Oberfläche" },
+      { "label": "Differenz-Images", "free": "yes", "pro": "yes", "proNote": "auch in der Oberfläche" },
       { "label": "Verschlüsselte Images", "free": "no", "pro": "planned" },
       { "label": "Netzwerkziele (SMB, FTP, SFTP)", "free": "no", "pro": "planned" },
       { "label": "Zeitplanung und Aufbewahrung", "free": "no", "pro": "planned" }
@@ -134,7 +134,7 @@
     "now": {
       "title": "Was VolSave Pro heute kann.",
       "items": [
-        { "title": "Auswählen statt tippen", "text": "Datenträger und Partitionen auf einen Blick. Einen ganzen Datenträger oder ein einzelnes Volume wählen und sichern." },
+        { "title": "Auswählen statt tippen", "text": "Datenträger und Partitionen auf einen Blick. Einen ganzen Datenträger oder ein einzelnes Volume wählen und sichern – auf Wunsch als Differenz-Image, das nur die Änderungen seit der Vollsicherung speichert." },
         { "title": "Wiederherstellen mit Prüfung", "text": "Datenträger- und Volume-Images zurückspielen und das Ergebnis prüfen – auch ohne Lizenz." },
         { "title": "Läuft überall", "text": "Windows 10/11 und Windows PE. Der Software-Renderer braucht keinen Grafiktreiber." },
         { "title": "Eine Datei für beides", "text": "volsave-pro.exe öffnet per Doppelklick die Oberfläche. Mit Argumenten aufgerufen arbeitet dieselbe Datei als Kommandozeile – mit denselben Befehlen wie das freie volsave, für cmd, PowerShell, Skripte und die Aufgabenplanung." }
@@ -146,7 +146,7 @@
       "text": "Ihr Lizenzschlüssel wird im Programm geprüft, ohne Verbindung zu einem Server. Das funktioniert auch in Windows PE und in abgeschotteten Netzen.",
       "facts": [
         { "term": "Für wen", "desc": "Pro Person oder Firma, ohne Bindung an ein Gerät." },
-        { "term": "Laufzeit", "desc": "Dauerhaft gültig, inklusive einem Jahr Updates." },
+        { "term": "Laufzeit", "desc": "Dauerhaft gültig für eine Hauptversion, mit allen ihren Updates. Eine Lizenz für 0.x.x gilt bis 0.9.9; ab 1.0.0 braucht es eine neue Lizenz." },
         { "term": "Aktivierung", "desc": "Keine. Der Schlüssel wird offline geprüft." },
         { "term": "Ohne Lizenz", "desc": "Datenträger anzeigen und Images wiederherstellen. Sichern braucht eine Lizenz." }
       ]
@@ -157,7 +157,6 @@
       "items": [
         "Verschlüsselte Images",
         "Netzwerkziele: SMB, FTP, SFTP",
-        "Differenz-Sicherung in der Oberfläche",
         "Deutsche Oberfläche",
         "Zeitplanung",
         "Aufbewahrungsregeln"

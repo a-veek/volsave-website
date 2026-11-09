@@ -119,7 +119,7 @@
       { "label": "Línea de comandos para scripts", "free": "yes", "pro": "yes", "proNote": "en el mismo archivo EXE" },
       { "label": "Un solo archivo EXE, sin instalación", "free": "yes", "freeNote": "volsave.exe", "pro": "yes", "proNote": "volsave-pro.exe: interfaz y línea de comandos" },
       { "label": "Windows 10/11 y Windows PE", "free": "yes", "pro": "yes", "proNote": "funciona sin controlador gráfico" },
-      { "label": "Imágenes diferenciales", "free": "yes", "pro": "planned", "proNote": "en la interfaz" },
+      { "label": "Imágenes diferenciales", "free": "yes", "pro": "yes", "proNote": "también en la interfaz" },
       { "label": "Imágenes cifradas", "free": "no", "pro": "planned" },
       { "label": "Destinos de red (SMB, FTP, SFTP)", "free": "no", "pro": "planned" },
       { "label": "Programación y retención", "free": "no", "pro": "planned" }
@@ -134,7 +134,7 @@
     "now": {
       "title": "Lo que VolSave Pro hace hoy.",
       "items": [
-        { "title": "Elegir en vez de escribir", "text": "Discos y particiones de un vistazo. Elige un disco completo o un volumen y cópialo." },
+        { "title": "Elegir en vez de escribir", "text": "Discos y particiones de un vistazo. Elige un disco completo o un volumen y cópialo, si quieres como imagen diferencial, que solo guarda lo que cambió desde la copia completa." },
         { "title": "Restaurar con verificación", "text": "Restaura imágenes de disco y de volumen y comprueba el resultado, también sin licencia." },
         { "title": "Funciona en todas partes", "text": "Windows 10/11 y Windows PE. El renderizador por software no necesita controlador gráfico." },
         { "title": "Un archivo para ambos", "text": "Con doble clic, volsave-pro.exe abre la interfaz. Llamado con argumentos, el mismo archivo funciona como línea de comandos, con los mismos comandos que el volsave libre, para cmd, PowerShell, scripts y el Programador de tareas." }
@@ -146,7 +146,7 @@
       "text": "La clave de licencia se comprueba dentro del programa, sin contactar con ningún servidor. Funciona también en Windows PE y en redes aisladas.",
       "facts": [
         { "term": "Para quién", "desc": "Por persona o empresa, sin vincularse a un dispositivo." },
-        { "term": "Duración", "desc": "Perpetua, con un año de actualizaciones." },
+        { "term": "Duración", "desc": "Perpetua para una versión principal, con todas sus actualizaciones. Una licencia para 0.x.x cubre todas las versiones hasta la 0.9.9; la 1.0.0 necesita una licencia nueva." },
         { "term": "Activación", "desc": "Ninguna. La clave se comprueba sin conexión." },
         { "term": "Sin licencia", "desc": "Mostrar discos y restaurar imágenes. Para copiar se necesita licencia." }
       ]
@@ -157,7 +157,6 @@
       "items": [
         "Imágenes cifradas",
         "Destinos de red: SMB, FTP, SFTP",
-        "Copias diferenciales en la interfaz",
         "Interfaz en alemán",
         "Programación",
         "Reglas de retención"

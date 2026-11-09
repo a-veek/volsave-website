@@ -119,7 +119,7 @@
       { "label": "Command line for scripts", "free": "yes", "pro": "yes", "proNote": "in the same EXE file" },
       { "label": "One EXE file, no installation", "free": "yes", "freeNote": "volsave.exe", "pro": "yes", "proNote": "volsave-pro.exe: interface and command line" },
       { "label": "Windows 10/11 and Windows PE", "free": "yes", "pro": "yes", "proNote": "runs without a graphics driver" },
-      { "label": "Differential images", "free": "yes", "pro": "planned", "proNote": "in the interface" },
+      { "label": "Differential images", "free": "yes", "pro": "yes", "proNote": "also in the interface" },
       { "label": "Encrypted images", "free": "no", "pro": "planned" },
       { "label": "Network targets (SMB, FTP, SFTP)", "free": "no", "pro": "planned" },
       { "label": "Scheduling and retention", "free": "no", "pro": "planned" }
@@ -134,7 +134,7 @@
     "now": {
       "title": "What VolSave Pro does today.",
       "items": [
-        { "title": "Pick instead of type", "text": "Disks and partitions at a glance. Choose a whole disk or a single volume and back it up." },
+        { "title": "Pick instead of type", "text": "Disks and partitions at a glance. Choose a whole disk or a single volume and back it up – optionally as a differential image that stores only what changed since the full backup." },
         { "title": "Restore with verification", "text": "Restore disk and volume images and check the result – also without a license." },
         { "title": "Runs everywhere", "text": "Windows 10/11 and Windows PE. The software renderer needs no graphics driver." },
         { "title": "One file for both", "text": "Double-click volsave-pro.exe and the interface opens. Called with arguments, the same file works as a command line – with the same commands as the free volsave, for cmd, PowerShell, scripts and Task Scheduler." }
@@ -146,7 +146,7 @@
       "text": "Your license key is checked inside the program, without contacting a server. That works in Windows PE and in isolated networks, too.",
       "facts": [
         { "term": "Who", "desc": "Per person or company, not tied to a device." },
-        { "term": "Term", "desc": "Perpetual, including one year of updates." },
+        { "term": "Term", "desc": "Perpetual for one major version, with all its updates. A license for 0.x.x covers every version up to 0.9.9; 1.0.0 needs a new license." },
         { "term": "Activation", "desc": "None. The key is checked offline." },
         { "term": "Without a license", "desc": "Show disks and restore images. Backing up needs a license." }
       ]
@@ -157,7 +157,6 @@
       "items": [
         "Encrypted images",
         "Network targets: SMB, FTP, SFTP",
-        "Differential backups in the interface",
         "German interface",
         "Scheduling",
         "Retention rules"
