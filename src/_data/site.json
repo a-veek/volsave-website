@@ -7,6 +7,7 @@
   "locales": { "de": "de_DE", "en": "en_US", "es": "es_ES" },
   "downloadUrl": "https://github.com/a-veek/VolSave/releases",
   "sourceUrl": "https://github.com/a-veek/VolSave",
+  "proDownloadUrl": "https://github.com/a-veek/VolSave-Pro-Releases/releases",
   "contactEmail": { "de": "kontakt@volumesave.de", "en": "contact@volumesave.de", "es": "contacto@volumesave.de" },
   "publisher": {
     "name": "Veek.IT",

@@ -129,6 +129,7 @@
     "eyebrow": "VolSave Pro",
     "title": "El mismo motor. Con interfaz.",
     "lead": "VolSave Pro se basa en las mismas bibliotecas que la herramienta libre de línea de comandos, con una interfaz gráfica que funciona también en Windows PE y en máquinas virtuales sin controlador gráfico.",
+    "ctaDownload": "Descargar VolSave Pro",
     "ctaBuy": "Solicitar licencia",
     "ctaFree": "Ir a la versión gratuita",
     "now": {

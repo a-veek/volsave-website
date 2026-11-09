@@ -100,6 +100,7 @@ function structuredData(pageKey, lang, t, site, pageUrl) {
         url: abs(pageUrl),
         applicationCategory: "UtilitiesApplication",
         operatingSystem: "Windows 10, Windows 11, Windows PE",
+        downloadUrl: site.proDownloadUrl,
         isBasedOn: { "@id": software["@id"] },
         publisher: { "@id": org["@id"] },
       },

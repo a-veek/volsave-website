@@ -9,11 +9,13 @@ layout: layouts/base.njk
 ---
 {%- set t = i18n[lang] -%}
 {%- set h = t.home -%}
+{%- from "partials/icon.njk" import icon -%}
+{%- set featureIcons = ["live", "disk", "blocks", "diff", "verify", "winpe"] -%}
 
 <section class="hero">
   <div class="container hero__inner">
     <p class="eyebrow">{{ h.eyebrow }}</p>
-    <h1 class="display">{{ h.title }}</h1>
+    <h1 class="display display--gradient">{{ h.title }}</h1>
     <p class="lead">{{ h.lead }}</p>
     <div class="actions">
       <a class="button button--primary" href="{{ site.downloadUrl }}">{{ h.ctaDownload }}</a>
@@ -58,6 +60,7 @@ layout: layouts/base.njk
     <ul class="grid grid--3 features">
       {%- for f in h.features.items %}
       <li class="card">
+        <span class="card__icon">{{ icon(featureIcons[loop.index0]) }}</span>
         <h3>{{ f.title }}</h3>
         <p>{{ f.text }}</p>
       </li>

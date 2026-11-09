@@ -9,14 +9,17 @@ layout: layouts/base.njk
 ---
 {%- set t = i18n[lang] -%}
 {%- set pr = t.pro -%}
+{%- from "partials/icon.njk" import icon -%}
+{%- set nowIcons = ["pointer", "restore", "monitor", "file"] -%}
 
 <section class="hero hero--compact">
   <div class="container hero__inner">
     <p class="eyebrow">{{ pr.eyebrow }}</p>
-    <h1 class="display">{{ pr.title }}</h1>
+    <h1 class="display display--gradient">{{ pr.title }}</h1>
     <p class="lead">{{ pr.lead }}</p>
     <div class="actions">
-      <a class="button button--primary" href="#buy">{{ pr.ctaBuy }}</a>
+      <a class="button button--primary" href="{{ site.proDownloadUrl }}">{{ pr.ctaDownload }}</a>
+      <a class="button button--link" href="#buy">{{ pr.ctaBuy }} <span aria-hidden="true">›</span></a>
       <a class="button button--link" href="/{{ lang }}/">{{ pr.ctaFree }} <span aria-hidden="true">›</span></a>
     </div>
   </div>
@@ -30,6 +33,7 @@ layout: layouts/base.njk
     <ul class="grid grid--2 features">
       {%- for f in pr.now.items %}
       <li class="card">
+        <span class="card__icon">{{ icon(nowIcons[loop.index0]) }}</span>
         <h3>{{ f.title }}</h3>
         <p>{{ f.text }}</p>
       </li>
@@ -85,6 +89,7 @@ layout: layouts/base.njk
     {%- endif %}
     <div class="actions actions--center">
       <a class="button button--primary" href="mailto:{{ site.contactEmail[lang] }}?subject=VolSave%20Pro">{{ pr.buy.cta }}</a>
+      <a class="button button--link" href="{{ site.proDownloadUrl }}">{{ pr.ctaDownload }} <span aria-hidden="true">›</span></a>
     </div>
     <p class="fine">{{ pr.buy.fine }}</p>
   </div>

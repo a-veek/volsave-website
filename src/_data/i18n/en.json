@@ -129,6 +129,7 @@
     "eyebrow": "VolSave Pro",
     "title": "The same engine. With an interface.",
     "lead": "VolSave Pro builds on the same libraries as the free command line tool – with a graphical interface that also runs in Windows PE and in virtual machines without a graphics driver.",
+    "ctaDownload": "Download VolSave Pro",
     "ctaBuy": "Request a license",
     "ctaFree": "Go to the free version",
     "now": {
