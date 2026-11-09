@@ -82,7 +82,7 @@ layout: layouts/base.njk
     <h2 id="buy-title">{{ pr.buy.title }}</h2>
     <p class="section__lead">{{ pr.buy.text }}</p>
     <div class="actions actions--center">
-      <a class="button button--primary" href="mailto:{{ site.contactEmail }}?subject=VolSave%20Pro">{{ pr.buy.cta }}</a>
+      <a class="button button--primary" href="mailto:{{ site.contactEmail[lang] }}?subject=VolSave%20Pro">{{ pr.buy.cta }}</a>
     </div>
     <p class="fine">{{ pr.buy.fine }}</p>
   </div>

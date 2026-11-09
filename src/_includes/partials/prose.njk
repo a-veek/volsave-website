@@ -12,7 +12,7 @@
     {%- for s in doc.sections %}
     <h2>{{ s.heading }}</h2>
     {%- for para in s.paragraphs %}
-    <p>{{ para | replace("{email}", '<a href="mailto:' + site.contactEmail + '">' + site.contactEmail + '</a>') | safe }}</p>
+    <p>{{ para | replace("{email}", '<a href="mailto:' + site.contactEmail[lang] + '">' + site.contactEmail[lang] + '</a>') | safe }}</p>
     {%- endfor %}
     {%- endfor %}
   </div>

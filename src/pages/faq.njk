@@ -31,6 +31,6 @@ layout: layouts/base.njk
       </details>
       {%- endfor %}
     </div>
-    <p class="note">{{ f.more }} <a href="mailto:{{ site.contactEmail }}">{{ site.contactEmail }}</a></p>
+    <p class="note">{{ f.more }} <a href="mailto:{{ site.contactEmail[lang] }}">{{ site.contactEmail[lang] }}</a></p>
   </div>
 </section>
