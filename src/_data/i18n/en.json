@@ -230,19 +230,18 @@
   },
   "legal": {
     "title": "Legal notice",
-    "notice": "Placeholder: please fill in name, address and contact details before the site goes live.",
     "sections": [
       {
-        "heading": "Information according to § 5 DDG (German Digital Services Act)",
-        "paragraphs": ["[First name Last name]<br>[Street and number]<br>[Postcode City]<br>Germany"]
+        "heading": "Information according to Art. 10 LSSI-CE (Spanish Law 34/2002)",
+        "paragraphs": ["Alexander Veek<br>Veek.IT<br>Rua Cubelos 20<br>15172 Perillo<br>Spain"]
+      },
+      {
+        "heading": "Tax identification number",
+        "paragraphs": ["NIF: ES Z3144185K"]
       },
       {
         "heading": "Contact",
         "paragraphs": ["Email: {email}"]
-      },
-      {
-        "heading": "Responsible for content according to § 18 (2) MStV",
-        "paragraphs": ["[First name Last name], address as above"]
       },
       {
         "heading": "Liability for links",
@@ -252,18 +251,18 @@
   },
   "privacy": {
     "title": "Privacy policy",
-    "notice": "Placeholder: please fill in the controller and hosting provider and have the text reviewed before publishing.",
     "intro": "This website uses no cookies, no tracking, no analytics and loads no content such as fonts or scripts from third-party servers.",
     "sections": [
       {
         "heading": "Controller",
-        "paragraphs": ["[First name Last name], [Address], email: {email}"]
+        "paragraphs": ["Alexander Veek, Veek.IT, Rua Cubelos 20, 15172 Perillo, Spain, email: {email}"]
       },
       {
         "heading": "Hosting and server logs",
         "paragraphs": [
-          "This website is hosted by [hosting provider, address]. When you open a page, the provider processes technically necessary data: IP address, date and time, requested address, amount of data transferred, browser and operating system.",
-          "The legal basis is Art. 6 (1) (f) GDPR; our legitimate interest is providing the website securely and reliably. The logs are deleted after [number] days."
+          "This website is hosted on GitHub Pages, a service of GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. When you open a page, the provider processes technically necessary data: IP address, date and time, requested address, amount of data transferred, browser and operating system.",
+          "The legal basis is Art. 6 (1) (f) GDPR; our legitimate interest is providing the website securely and reliably. GitHub decides how long these logs are kept; we do not receive any access data ourselves.",
+          "Data may be transferred to the USA. GitHub is certified under the EU-US Data Privacy Framework (adequacy decision of the European Commission, Art. 45 GDPR). More information in GitHub's privacy policy: <a href=\"https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement\">GitHub General Privacy Statement</a>."
         ]
       },
       {

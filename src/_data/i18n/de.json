@@ -230,19 +230,18 @@
   },
   "legal": {
     "title": "Impressum",
-    "notice": "Platzhalter: Bitte Name, Anschrift und Kontaktdaten eintragen, bevor die Seite online geht.",
     "sections": [
       {
-        "heading": "Angaben gemäß § 5 DDG",
-        "paragraphs": ["[Vorname Nachname]<br>[Straße Hausnummer]<br>[PLZ Ort]<br>Deutschland"]
+        "heading": "Angaben gemäß Art. 10 LSSI-CE (spanisches Gesetz 34/2002)",
+        "paragraphs": ["Alexander Veek<br>Veek.IT<br>Rua Cubelos 20<br>15172 Perillo<br>Spanien"]
+      },
+      {
+        "heading": "Steuernummer",
+        "paragraphs": ["NIF: ES Z3144185K"]
       },
       {
         "heading": "Kontakt",
         "paragraphs": ["E-Mail: {email}"]
-      },
-      {
-        "heading": "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV",
-        "paragraphs": ["[Vorname Nachname], Anschrift wie oben"]
       },
       {
         "heading": "Haftung für Links",
@@ -252,18 +251,18 @@
   },
   "privacy": {
     "title": "Datenschutzerklärung",
-    "notice": "Platzhalter: Bitte Verantwortlichen und Hosting-Anbieter eintragen und den Text vor der Veröffentlichung prüfen lassen.",
     "intro": "Diese Website verwendet keine Cookies, kein Tracking, keine Analyse-Dienste und lädt keine Inhalte von fremden Servern wie Schriftarten oder Skripte.",
     "sections": [
       {
         "heading": "Verantwortlicher",
-        "paragraphs": ["[Vorname Nachname], [Anschrift], E-Mail: {email}"]
+        "paragraphs": ["Alexander Veek, Veek.IT, Rua Cubelos 20, 15172 Perillo, Spanien, E-Mail: {email}"]
       },
       {
         "heading": "Hosting und Server-Protokolle",
         "paragraphs": [
-          "Diese Website wird bei [Hosting-Anbieter, Anschrift] gehostet. Beim Aufruf einer Seite verarbeitet der Anbieter technisch notwendige Daten: IP-Adresse, Datum und Uhrzeit, aufgerufene Adresse, übertragene Datenmenge, Browser und Betriebssystem.",
-          "Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO; unser berechtigtes Interesse ist die sichere und zuverlässige Bereitstellung der Website. Die Protokolle werden nach [Anzahl] Tagen gelöscht."
+          "Diese Website wird über GitHub Pages gehostet, einen Dienst der GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Beim Aufruf einer Seite verarbeitet der Anbieter technisch notwendige Daten: IP-Adresse, Datum und Uhrzeit, aufgerufene Adresse, übertragene Datenmenge, Browser und Betriebssystem.",
+          "Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO; unser berechtigtes Interesse ist die sichere und zuverlässige Bereitstellung der Website. Wie lange GitHub diese Protokolle speichert, legt GitHub fest; wir selbst erhalten keine Zugriffsdaten.",
+          "Dabei können Daten in die USA übermittelt werden. GitHub ist nach dem EU-US Data Privacy Framework zertifiziert (Angemessenheitsbeschluss der EU-Kommission, Art. 45 DSGVO). Weitere Informationen in der Datenschutzerklärung von GitHub: <a href=\"https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement\">GitHub General Privacy Statement</a>."
         ]
       },
       {

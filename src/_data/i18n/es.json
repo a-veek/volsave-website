@@ -230,19 +230,18 @@
   },
   "legal": {
     "title": "Aviso legal",
-    "notice": "Marcador de posición: introduce nombre, dirección y datos de contacto antes de publicar el sitio.",
     "sections": [
       {
-        "heading": "Información según el § 5 DDG (ley alemana de servicios digitales)",
-        "paragraphs": ["[Nombre Apellido]<br>[Calle y número]<br>[Código postal Ciudad]<br>Alemania"]
+        "heading": "Información general según el art. 10 de la LSSI-CE (Ley 34/2002)",
+        "paragraphs": ["Alexander Veek<br>Veek.IT<br>Rua Cubelos 20<br>15172 Perillo<br>España"]
+      },
+      {
+        "heading": "Número de identificación fiscal",
+        "paragraphs": ["NIF: ES Z3144185K"]
       },
       {
         "heading": "Contacto",
         "paragraphs": ["Correo electrónico: {email}"]
-      },
-      {
-        "heading": "Responsable del contenido según el § 18 (2) MStV",
-        "paragraphs": ["[Nombre Apellido], dirección como arriba"]
       },
       {
         "heading": "Responsabilidad por enlaces",
@@ -252,18 +251,18 @@
   },
   "privacy": {
     "title": "Política de privacidad",
-    "notice": "Marcador de posición: introduce el responsable y el proveedor de alojamiento y haz revisar el texto antes de publicarlo.",
     "intro": "Este sitio web no usa cookies, ni seguimiento, ni servicios de análisis, y no carga contenido como fuentes o scripts desde servidores de terceros.",
     "sections": [
       {
         "heading": "Responsable",
-        "paragraphs": ["[Nombre Apellido], [Dirección], correo electrónico: {email}"]
+        "paragraphs": ["Alexander Veek, Veek.IT, Rua Cubelos 20, 15172 Perillo, España, correo electrónico: {email}"]
       },
       {
         "heading": "Alojamiento y registros del servidor",
         "paragraphs": [
-          "Este sitio está alojado en [proveedor de alojamiento, dirección]. Al abrir una página, el proveedor trata datos técnicamente necesarios: dirección IP, fecha y hora, dirección solicitada, cantidad de datos transferidos, navegador y sistema operativo.",
-          "La base jurídica es el art. 6.1.f del RGPD; nuestro interés legítimo es ofrecer el sitio de forma segura y fiable. Los registros se eliminan tras [número] días."
+          "Este sitio está alojado en GitHub Pages, un servicio de GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, EE. UU. Al abrir una página, el proveedor trata datos técnicamente necesarios: dirección IP, fecha y hora, dirección solicitada, cantidad de datos transferidos, navegador y sistema operativo.",
+          "La base jurídica es el art. 6.1.f del RGPD; nuestro interés legítimo es ofrecer el sitio de forma segura y fiable. GitHub decide cuánto tiempo conserva estos registros; nosotros no recibimos datos de acceso.",
+          "Los datos pueden transferirse a EE. UU. GitHub está certificado según el Marco de Privacidad de Datos UE-EE. UU. (decisión de adecuación de la Comisión Europea, art. 45 del RGPD). Más información en la política de privacidad de GitHub: <a href=\"https://docs.github.com/es/site-policy/privacy-policies/github-general-privacy-statement\">GitHub General Privacy Statement</a>."
         ]
       },
       {
