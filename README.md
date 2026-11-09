@@ -21,6 +21,8 @@ npm run build    # output in _site/
 | `src/_includes/` | Layout and partials (header, comparison table, legal texts) |
 | `src/assets/css/main.css` | Styles; design tokens with contrast ratios at the top |
 | `src/index.njk` | `/` sends visitors to their browser language (German otherwise) |
+| `eleventy.config.js` | Filters, including `structuredData` (schema.org JSON-LD for home, pro and faq) |
+| `tools/og-image.html` | Source of the social preview images `src/assets/img/og-{de,en,es}.png`; render with `tools/og-images.ps1` (headless Edge, Windows) |
 
 Pages: home, `pro`, `faq`, `legal` (Impressum), `privacy` (Datenschutz).
 URLs are the same in every language, so the language switch always lands
@@ -31,8 +33,6 @@ Adding a language: add its code to `languages`, `languageNames` and
 
 ## Before going live
 
-- Fill in the placeholders in `legal` and `privacy` (name, address, hosting
-  provider) in all three language files.
-- `contactEmail` in `site.json` must exist.
+- The addresses in `contactEmail` (one per language) in `site.json` must exist.
 - `downloadUrl` points to the VolSave releases on GitHub; that repository
   must be public for visitors to download.

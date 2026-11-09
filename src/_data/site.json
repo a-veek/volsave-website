@@ -8,6 +8,14 @@
   "downloadUrl": "https://github.com/a-veek/VolSave/releases",
   "sourceUrl": "https://github.com/a-veek/VolSave",
   "contactEmail": { "de": "kontakt@volumesave.de", "en": "contact@volumesave.de", "es": "contacto@volumesave.de" },
+  "publisher": {
+    "name": "Veek.IT",
+    "founder": "Alexander Veek",
+    "streetAddress": "Rua Cubelos 20",
+    "postalCode": "15172",
+    "addressLocality": "Perillo",
+    "addressCountry": "ES"
+  },
   "nav": ["home", "pro", "faq"],
   "footerNav": ["legal", "privacy"]
 }

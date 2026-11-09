@@ -1,0 +1,56 @@
+<!doctype html>
+<!--
+  Source of the Open Graph images src/assets/img/og-{de,en,es}.png (1200×630).
+  Not part of the site build. Regenerate with tools/og-images.ps1 after
+  changing the texts below.
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    background: #000;
+    color: #f5f5f7;
+    font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { box-sizing: border-box; height: 100%; padding: 72px 80px 64px; display: flex; flex-direction: column; }
+  .brand { display: flex; align-items: center; gap: 20px; font-size: 44px; font-weight: 600; letter-spacing: -0.01em; }
+  .brand svg { width: 64px; height: 64px; }
+  .eyebrow { margin: 56px 0 0; font-size: 30px; font-weight: 600; color: #2997ff; }
+  h1 { margin: 14px 0 0; max-width: 980px; font-size: 72px; line-height: 1.07; font-weight: 700; letter-spacing: -0.02em; }
+  .map { margin-top: auto; display: grid; grid-template-columns: repeat(36, 1fr); gap: 6px; }
+  .map span { height: 22px; border-radius: 5px; background: #2c2c2e; }
+  .map span.u { background: #2997ff; }
+  .foot { margin-top: 22px; display: flex; justify-content: space-between; font-size: 24px; color: #a1a1a6; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="4" width="28" height="24" rx="7" fill="#f5f5f7"/><rect x="7" y="10" width="4" height="12" rx="1.5" fill="#000"/><rect x="13" y="10" width="4" height="12" rx="1.5" fill="#000"/><rect x="19" y="10" width="2" height="12" rx="1" fill="#000" opacity=".55"/><rect x="23" y="10" width="2" height="12" rx="1" fill="#000" opacity=".3"/></svg>
+    VolSave
+  </div>
+  <p class="eyebrow" id="eyebrow"></p>
+  <h1 id="title"></h1>
+  <div class="map" id="map"></div>
+  <div class="foot"><span id="fine"></span><span>volumesave.de</span></div>
+</div>
+<script>
+  const texts = {
+    de: { eyebrow: "Datenträger-Images für Windows", title: "Ganze Datenträger sichern. Und genau so zurückspielen.", fine: "Kostenlos und quelloffen · VolSave Pro mit Oberfläche" },
+    en: { eyebrow: "Disk imaging for Windows", title: "Back up entire disks. Restore them exactly.", fine: "Free and open source · VolSave Pro with a GUI" },
+    es: { eyebrow: "Imágenes de discos para Windows", title: "Copia discos completos. Restáuralos tal cual.", fine: "Gratis y de código abierto · VolSave Pro con interfaz" }
+  };
+  const lang = new URLSearchParams(location.search).get("lang") || "de";
+  const t = texts[lang];
+  document.documentElement.lang = lang;
+  for (const k of ["eyebrow", "title", "fine"]) document.getElementById(k).textContent = t[k];
+  // Same used/free pattern as the disk map on the home page (first 36 cells).
+  const pattern = "111111110011100000111111111000000111";
+  document.getElementById("map").innerHTML =
+    [...pattern].map(c => `<span${c === "1" ? ' class="u"' : ""}></span>`).join("");
+</script>
+</body>
+</html>

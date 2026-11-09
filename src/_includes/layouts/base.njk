@@ -21,6 +21,19 @@
   <meta property="og:description" content="{{ p.metaDescription }}">
   <meta property="og:url" content="{{ page.url | absolute(site.url) }}">
   <meta property="og:locale" content="{{ site.locales[lang] }}">
+  {%- for l in site.languages %}{% if l != lang %}
+  <meta property="og:locale:alternate" content="{{ site.locales[l] }}">
+  {%- endif %}{% endfor %}
+  {%- set ogImage = ("/assets/img/og-" + lang + ".png") | absolute(site.url) %}
+  <meta property="og:image" content="{{ ogImage }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{{ site.name }} – {{ t.home.eyebrow }}">
+  <meta name="twitter:card" content="summary_large_image">
+  {%- set ld = pageKey | structuredData(lang, t, site, page.url) %}
+  {%- if ld %}
+  <script type="application/ld+json">{{ ld | safe }}</script>
+  {%- endif %}
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/css/main.css">
 </head>
