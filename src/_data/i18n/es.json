@@ -120,6 +120,7 @@
       { "label": "Un solo archivo EXE, sin instalación", "free": "yes", "freeNote": "volsave.exe", "pro": "yes", "proNote": "volsave-pro.exe: interfaz y línea de comandos" },
       { "label": "Windows 10/11 y Windows PE", "free": "yes", "pro": "yes", "proNote": "funciona sin controlador gráfico" },
       { "label": "Imágenes diferenciales", "free": "yes", "pro": "yes", "proNote": "también en la interfaz" },
+      { "label": "Clonar un disco directamente, sin imagen", "free": "no", "freeNote": "mediante una imagen", "pro": "yes", "proNote": "con licencia" },
       { "label": "Imágenes cifradas", "free": "no", "pro": "yes", "proNote": "AES-256, con contraseña" },
       { "label": "Destinos de red (SMB, FTP, SFTP)", "free": "no", "pro": "planned" },
       { "label": "Programación y retención", "free": "no", "pro": "planned" }
@@ -139,6 +140,7 @@
         { "title": "Restaurar con verificación", "text": "Restaura imágenes de disco y de volumen y comprueba el resultado, también sin licencia." },
         { "title": "Funciona en todas partes", "text": "Windows 10/11 y Windows PE. El renderizador por software no necesita controlador gráfico." },
         { "title": "Un archivo para ambos", "text": "Con doble clic, volsave-pro.exe abre la interfaz. Llamado con argumentos, el mismo archivo funciona como línea de comandos, con los mismos comandos que el volsave libre, para cmd, PowerShell, scripts y el Programador de tareas." },
+        { "title": "Clonar directamente", "text": "Copia un disco completo en otro sin imagen intermedia, por ejemplo al pasar a un SSD nuevo. Lee mediante instantáneas VSS, solo los bloques usados, y después comprueba el destino. En la ventana con el modo «Clonar», en la línea de comandos con volsave-pro clone HD0 HD1." },
         { "title": "Imágenes cifradas", "text": "Si quieres, una contraseña protege la imagen: AES-256-GCM, con la clave derivada de la contraseña mediante Argon2id. Vale también para imágenes divididas e imágenes diferenciales. Sin la contraseña, una imagen cifrada no se puede restaurar: no hay puerta trasera." }
       ]
     },
@@ -150,7 +152,7 @@
         { "term": "Para quién", "desc": "Por persona o empresa, sin vincularse a un dispositivo." },
         { "term": "Duración", "desc": "Perpetua para una versión principal, con todas sus actualizaciones." },
         { "term": "Activación", "desc": "Ninguna. La clave se comprueba sin conexión." },
-        { "term": "Sin licencia", "desc": "Mostrar discos y restaurar imágenes. Para copiar se necesita licencia." }
+        { "term": "Sin licencia", "desc": "Mostrar discos y restaurar imágenes. Para copiar y clonar se necesita licencia." }
       ]
     },
     "planned": {
@@ -178,7 +180,7 @@
         "q": "¿Qué diferencia hay entre VolSave y VolSave Pro?",
         "a": [
           "VolSave es la herramienta gratuita de línea de comandos bajo la GPL-3.0. Copia, verifica, restaura y fusiona imágenes.",
-          "VolSave Pro es un producto comercial independiente con interfaz gráfica. Usa las mismas bibliotecas y además puede cifrar imágenes con contraseña; allí están previstos los destinos de red."
+          "VolSave Pro es un producto comercial independiente con interfaz gráfica. Usa las mismas bibliotecas y además puede cifrar imágenes con contraseña y clonar discos directamente; allí están previstos los destinos de red."
         ]
       },
       {
@@ -219,7 +221,9 @@
       {
         "q": "¿Puedo clonar en otro disco?",
         "a": [
-          "Sí, con volsave restore … HD1. El clon conserva el identificador del disco original. Mientras ambos estén conectados, Windows mantiene el clon sin conexión. No lo pongas en línea, o Windows le asignará un identificador nuevo y ya no arrancará. Desconecta el disco original y arranca desde el clon."
+          "Sí. Con el VolSave gratuito primero copias el disco como imagen y después la restauras en el disco nuevo con volsave restore … HD1.",
+          "VolSave Pro también clona directamente, sin imagen intermedia: en la ventana con el modo «Clonar» o con volsave-pro clone HD0 HD1. Lee como una copia de seguridad, mediante instantáneas VSS, y escribe y verifica como una restauración. Para clonar se necesita licencia.",
+          "En ambos casos el clon conserva el identificador del disco original. Mientras ambos estén conectados, el clon permanece sin conexión. No lo pongas en línea, o Windows le asignará un identificador nuevo y ya no arrancará. Apaga el equipo, desconecta el disco original y arranca desde el clon."
         ]
       },
       {

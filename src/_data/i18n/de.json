@@ -120,6 +120,7 @@
       { "label": "Eine EXE-Datei, ohne Installation", "free": "yes", "freeNote": "volsave.exe", "pro": "yes", "proNote": "volsave-pro.exe: Oberfläche und Kommandozeile" },
       { "label": "Windows 10/11 und Windows PE", "free": "yes", "pro": "yes", "proNote": "läuft auch ohne Grafiktreiber" },
       { "label": "Differenz-Images", "free": "yes", "pro": "yes", "proNote": "auch in der Oberfläche" },
+      { "label": "Datenträger direkt klonen, ohne Image", "free": "no", "freeNote": "über ein Image", "pro": "yes", "proNote": "mit Lizenz" },
       { "label": "Verschlüsselte Images", "free": "no", "pro": "yes", "proNote": "AES-256, mit Passwort" },
       { "label": "Netzwerkziele (SMB, FTP, SFTP)", "free": "no", "pro": "planned" },
       { "label": "Zeitplanung und Aufbewahrung", "free": "no", "pro": "planned" }
@@ -139,6 +140,7 @@
         { "title": "Wiederherstellen mit Prüfung", "text": "Datenträger- und Volume-Images zurückspielen und das Ergebnis prüfen – auch ohne Lizenz." },
         { "title": "Läuft überall", "text": "Windows 10/11 und Windows PE. Der Software-Renderer braucht keinen Grafiktreiber." },
         { "title": "Eine Datei für beides", "text": "volsave-pro.exe öffnet per Doppelklick die Oberfläche. Mit Argumenten aufgerufen arbeitet dieselbe Datei als Kommandozeile – mit denselben Befehlen wie das freie volsave, für cmd, PowerShell, Skripte und die Aufgabenplanung." },
+        { "title": "Direkt klonen", "text": "Einen ganzen Datenträger ohne Image dazwischen auf einen anderen kopieren – etwa beim Umzug auf eine neue SSD. Gelesen wird über VSS-Snapshots, nur belegte Blöcke; danach wird das Ziel geprüft. Im Fenster per Modus „Klonen“, auf der Kommandozeile mit volsave-pro clone HD0 HD1." },
         { "title": "Verschlüsselte Images", "text": "Auf Wunsch schützt ein Passwort das Image: AES-256-GCM, der Schlüssel wird mit Argon2id aus dem Passwort abgeleitet. Das gilt auch für geteilte Images und Differenz-Images. Ohne das Passwort lässt sich ein verschlüsseltes Image nicht wiederherstellen – es gibt keine Hintertür." }
       ]
     },
@@ -150,7 +152,7 @@
         { "term": "Für wen", "desc": "Pro Person oder Firma, ohne Bindung an ein Gerät." },
         { "term": "Laufzeit", "desc": "Dauerhaft gültig für eine Hauptversion, mit allen ihren Updates." },
         { "term": "Aktivierung", "desc": "Keine. Der Schlüssel wird offline geprüft." },
-        { "term": "Ohne Lizenz", "desc": "Datenträger anzeigen und Images wiederherstellen. Sichern braucht eine Lizenz." }
+        { "term": "Ohne Lizenz", "desc": "Datenträger anzeigen und Images wiederherstellen. Sichern und Klonen brauchen eine Lizenz." }
       ]
     },
     "planned": {
@@ -178,7 +180,7 @@
         "q": "Was ist der Unterschied zwischen VolSave und VolSave Pro?",
         "a": [
           "VolSave ist das kostenlose Kommandozeilenprogramm unter der GPL-3.0. Es sichert, prüft, stellt wieder her und führt Images zusammen.",
-          "VolSave Pro ist ein getrenntes, kommerzielles Produkt mit grafischer Oberfläche. Es nutzt dieselben Bibliotheken und kann Images zusätzlich mit Passwort verschlüsseln; Netzwerkziele sind dort geplant."
+          "VolSave Pro ist ein getrenntes, kommerzielles Produkt mit grafischer Oberfläche. Es nutzt dieselben Bibliotheken und kann zusätzlich Images mit Passwort verschlüsseln und Datenträger direkt klonen; Netzwerkziele sind dort geplant."
         ]
       },
       {
@@ -219,7 +221,9 @@
       {
         "q": "Kann ich auf einen anderen Datenträger klonen?",
         "a": [
-          "Ja, mit volsave restore … HD1. Der Klon behält die Datenträgerkennung des Originals. Solange beide angeschlossen sind, lässt Windows den Klon offline. Schalten Sie ihn dort nicht online, sonst vergibt Windows eine neue Kennung und er startet nicht mehr. Klemmen Sie das Original ab und starten Sie vom Klon."
+          "Ja. Mit dem kostenlosen VolSave sichern Sie den Datenträger zuerst als Image und spielen es dann mit volsave restore … HD1 auf den neuen Datenträger.",
+          "VolSave Pro klont auch direkt, ohne Image dazwischen: im Fenster über den Modus „Klonen“ oder mit volsave-pro clone HD0 HD1. Gelesen wird wie bei einer Sicherung über VSS-Snapshots, geschrieben und geprüft wie bei einer Wiederherstellung. Klonen braucht eine Lizenz.",
+          "In beiden Fällen behält der Klon die Datenträgerkennung des Originals. Solange beide angeschlossen sind, bleibt der Klon offline. Schalten Sie ihn dort nicht online, sonst vergibt Windows eine neue Kennung und er startet nicht mehr. Fahren Sie herunter, klemmen Sie das Original ab und starten Sie vom Klon."
         ]
       },
       {

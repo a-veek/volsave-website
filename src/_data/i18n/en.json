@@ -120,6 +120,7 @@
       { "label": "One EXE file, no installation", "free": "yes", "freeNote": "volsave.exe", "pro": "yes", "proNote": "volsave-pro.exe: interface and command line" },
       { "label": "Windows 10/11 and Windows PE", "free": "yes", "pro": "yes", "proNote": "runs without a graphics driver" },
       { "label": "Differential images", "free": "yes", "pro": "yes", "proNote": "also in the interface" },
+      { "label": "Clone a disk directly, without an image", "free": "no", "freeNote": "via an image", "pro": "yes", "proNote": "with a license" },
       { "label": "Encrypted images", "free": "no", "pro": "yes", "proNote": "AES-256, with a password" },
       { "label": "Network targets (SMB, FTP, SFTP)", "free": "no", "pro": "planned" },
       { "label": "Scheduling and retention", "free": "no", "pro": "planned" }
@@ -139,6 +140,7 @@
         { "title": "Restore with verification", "text": "Restore disk and volume images and check the result – also without a license." },
         { "title": "Runs everywhere", "text": "Windows 10/11 and Windows PE. The software renderer needs no graphics driver." },
         { "title": "One file for both", "text": "Double-click volsave-pro.exe and the interface opens. Called with arguments, the same file works as a command line – with the same commands as the free volsave, for cmd, PowerShell, scripts and Task Scheduler." },
+        { "title": "Clone directly", "text": "Copy a whole disk onto another without an image in between – for example when moving to a new SSD. It reads through VSS snapshots, used blocks only, and checks the target afterwards. In the window with the Clone mode, on the command line with volsave-pro clone HD0 HD1." },
         { "title": "Encrypted images", "text": "On request a password protects the image: AES-256-GCM, with the key derived from the password using Argon2id. That covers split images and differential images, too. Without the password an encrypted image cannot be restored – there is no back door." }
       ]
     },
@@ -150,7 +152,7 @@
         { "term": "Who", "desc": "Per person or company, not tied to a device." },
         { "term": "Term", "desc": "Perpetual for one major version, with all its updates." },
         { "term": "Activation", "desc": "None. The key is checked offline." },
-        { "term": "Without a license", "desc": "Show disks and restore images. Backing up needs a license." }
+        { "term": "Without a license", "desc": "Show disks and restore images. Backing up and cloning need a license." }
       ]
     },
     "planned": {
@@ -178,7 +180,7 @@
         "q": "What is the difference between VolSave and VolSave Pro?",
         "a": [
           "VolSave is the free command line tool under the GPL-3.0. It backs up, verifies, restores and merges images.",
-          "VolSave Pro is a separate, commercial product with a graphical interface. It uses the same libraries and can also encrypt images with a password; network targets are planned there."
+          "VolSave Pro is a separate, commercial product with a graphical interface. It uses the same libraries and can also encrypt images with a password and clone disks directly; network targets are planned there."
         ]
       },
       {
@@ -219,7 +221,9 @@
       {
         "q": "Can I clone to a different disk?",
         "a": [
-          "Yes, with volsave restore … HD1. The clone keeps the disk ID of the original. While both disks are attached, Windows keeps the clone offline. Do not set it online there, or Windows gives it a new ID and it no longer boots. Remove the original disk and boot from the clone."
+          "Yes. With the free VolSave you first back up the disk as an image and then restore it onto the new disk with volsave restore … HD1.",
+          "VolSave Pro also clones directly, without an image in between: in the window with the Clone mode, or with volsave-pro clone HD0 HD1. It reads like a backup, through VSS snapshots, and writes and verifies like a restore. Cloning needs a license.",
+          "Either way the clone keeps the disk ID of the original. While both disks are attached, the clone stays offline. Do not set it online there, or Windows gives it a new ID and it no longer boots. Shut down, remove the original disk and boot from the clone."
         ]
       },
       {
